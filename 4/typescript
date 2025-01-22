@@ -1,0 +1,12 @@
+function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
+    const sortedList = nums1.concat(nums2);
+    sortedList.sort((a, b) => a - b)
+
+    const preMedianIndex = sortedList.length / 2;
+
+    if (sortedList.length % 2 == 0 ){
+        return (sortedList[preMedianIndex -1] + sortedList[preMedianIndex]) / 2;
+    }
+    
+    return sortedList[Math.ceil(preMedianIndex)  - 1];
+};
