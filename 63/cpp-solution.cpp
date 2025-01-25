@@ -13,9 +13,12 @@ public:
         int n = obstacleGrid.back().size();
 
         vector<int> dp(n);
+        bool isThereAnObstacle = false;
         for (int i = 0; i < n; i++){
-            dp[i] = obstacleGrid.front()[i] == 1 ? 0 : 1; 
-            if(dp[i] == 0 && m == 1) return 0;
+            isThereAnObstacle = isThereAnObstacle || obstacleGrid.front()[i] == 1;
+
+            dp[i] = isThereAnObstacle ? 0 : 1; 
+
         }
         printState(dp);
 
