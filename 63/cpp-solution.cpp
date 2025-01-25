@@ -21,9 +21,11 @@ public:
 
 
         for (int x = 1; x < m; x++){
-            for (int y = 1; y < n; y++){
+            for (int y = 0; y < n; y++){
                 if (obstacleGrid[x][y] == 1){
                     dp[y] = 0;
+                    continue;
+                }else if (y == 0){
                     continue;
                 }
 
