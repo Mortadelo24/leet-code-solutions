@@ -6,10 +6,13 @@ public:
         }
         cout << endl;
     }
-
+    void calculateCost(vector<int>& state){
+    }
     int minPathSum(vector<vector<int>>& grid) {
-        vector<int> dp = vector(grid.front());
-        printState(dp);
-        return dp.back();
+        vector<int> state = vector(grid.front());
+        calculateCost(state);
+        printState(state);
+
+        return state.back();
     }
 };
