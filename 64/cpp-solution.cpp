@@ -9,7 +9,7 @@ public:
 
     int minPathSum(vector<vector<int>>& grid) {
         vector<int> dp = vector(grid.front());
-
+        printState(dp);
         return dp.back();
     }
 };
