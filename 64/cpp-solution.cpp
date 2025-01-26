@@ -6,11 +6,14 @@ public:
         }
         cout << endl;
     }
-    void calculateCost(vector<int>& state){
-    }
+  
     int minPathSum(vector<vector<int>>& grid) {
         vector<int> state = vector(grid.front());
-        calculateCost(state);
+        int tempIndex = 0;
+        state[0] = grid[tempIndex][0] + state[0];
+        for (int i = 1; i < state.size(); i++){
+            
+        }
         printState(state);
 
         return state.back();
