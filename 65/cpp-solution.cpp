@@ -1,6 +1,8 @@
 class Solution {
 public:
     bool isNumber(string s) {
-        return regex_match(s, regex("\d+e?"));
+        string pattern = R"((\+|-)?(\d+|((\d+.)|(\d+.\d+)|(.\d+)))([e|E]\d+)?)";
+
+        return regex_match(s, regex(pattern));
     }
 };
