@@ -4,7 +4,7 @@ public:
         string sing = R"((\+|-)?)";
         string integerNumber = sing + R"(\d+)";
         string decimalNumber = sing + R"((\d+\.)|(\d+\.\d+)|(\.\d+))";
-        string number = integerNumber + "|" + integerNumber;
+        string number = integerNumber + "|" + decimalNumber;
         string exponent = R"((e|E)?)" + number;
         string pattern = number  + exponent;
 
