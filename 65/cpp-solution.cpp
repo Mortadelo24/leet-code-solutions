@@ -2,11 +2,11 @@ class Solution {
 public:
     bool isNumber(string s) {
         string sing = R"((\+|-)?)";
-        string integerNumber = sing + R"(\d+)";
-        string decimalNumber = sing + R"((\d+\.)|(\d+\.\d+)|(\.\d+))";
+        string integerNumber =  R"(\d+)";
+        string decimalNumber =  R"((\d+\.)|(\d+\.\d+)|(\.\d+))";
         string number = integerNumber + "|" + decimalNumber;
-        string exponent = R"((e|E)?)" + number;
-        string pattern = number  + exponent;
+        string exponent = R"([eE][+-]?\d+)"; 
+        string pattern = sing + '(' + number + ')' + '(' + exponent + ")?";
 
         return regex_match(s, regex(pattern));
     }
