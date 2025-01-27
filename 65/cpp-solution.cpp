@@ -1,6 +1,6 @@
 class Solution {
 public:
     bool isNumber(string s) {
-        return regex_match(s, regex("\d"));
+        return regex_match(s, regex("\d+e?"));
     }
 };
