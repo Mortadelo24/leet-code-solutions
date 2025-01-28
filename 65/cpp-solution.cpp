@@ -17,8 +17,10 @@ public:
     bool doesInclude(set<char> items, char item) {
         return items.find(item) != items.end();
     }
+    bool isSing(char s){
+        return s == '-' || s == '+';
+    }
     bool isNumber(string s) {
-        set<char> sings = {'-', '+'};
         set<char> exponents = {'e', 'E'};
         set<char> dots = {'.'};
 
@@ -30,7 +32,7 @@ public:
                  state == digit3) &&
                 isdigit(character)) {
                 continue;
-            } else if (state == start && doesInclude(sings, character)) {
+            } else if (state == start && isSing(character)) {
                 state = sing0;
             } else if ((state == start || state == sing0) &&
                        doesInclude(dots, character)) {
@@ -48,7 +50,7 @@ public:
                         state == dot1) &&
                        doesInclude(exponents, character)) {
                 state = exponent;
-            } else if (state == exponent && doesInclude(sings, character)) {
+            } else if (state == exponent && isSing(character)) {
                 state = sing1;
             } else if ((state == sing1 || state == exponent) &&
                        isdigit(character)) {
