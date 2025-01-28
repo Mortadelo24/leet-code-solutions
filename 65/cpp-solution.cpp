@@ -54,10 +54,15 @@ public:
             } else if ((state == sing1 || state == exponent) &&
                        doesInclude(digits, character)) {
                 state = digit3;
-            } else
+            }
+            else
                 return false;
         }
 
-        return true;
+        if (state == digit0 || state == digit1 || state == digit2 || state == digit3 || state == dot1){
+                return true;
+        }
+
+        return false;
     }
 };
