@@ -24,6 +24,30 @@ public:
 
         return false;
     }
+    bool isExponent(string s, int& globalIndex){
+        enum {
+            start, exponent, sing, digit
+        } state = start;
+
+        int index = globalIndex; 
+
+        while (index < s.size()){
+            if (state == start && (s[index]== 'e' || s[index]== 'E')){
+                state = exponent;
+                index++;
+            } else if (state == exponent && isSing(s, index)){
+                state = sing;
+            } else if ((state == sing  || state == exponent)&& isDigit(s,index)){
+                state = digit;
+            } else break;
+        }
+
+        if (state == digit){
+            globalIndex = index;
+            return true;
+        }
+        return false;
+    }
     bool isRawNumber(string s, int& globalIndex){
         enum {
             start, digit0, dot0, dot1, digit1, digit2
@@ -99,6 +123,8 @@ public:
                 state = sing;
             } else if((state == sing || state == start) && isRawNumber(s, index)){
                 state = rawNumber;
+            } else if (state == rawNumber && isExponent(s, index)){
+                state = exponent;
             } else return false;
         } 
 
