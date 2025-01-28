@@ -57,24 +57,17 @@ public:
         // NOTE: it is required that each case add the necessary amount to the index, if not, it will not increase.
         while(index < s.size()){
             if (state == start && isDigit(s, index)){
-                cout << "digit0" << endl;
                 state = digit0;
             } else if (state == digit0 && s[index] == '.'){
-                cout << "dot1"  << endl;
                 state = dot1;
-                
                 index++;
 
             } else if (state == dot1 && isDigit(s, index)){
-                cout << "digit2"  << endl;
-
                 state = digit2;
             } else if(state == start && s[index] == '.'){
-                cout << "dot0" << endl;
                 state = dot0;
                 index++;
             }else if (state == dot0 && isDigit(s,index)){
-                cout << "digit1" << endl;
                 state = digit1;
 
             }else break;
