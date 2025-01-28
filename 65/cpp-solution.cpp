@@ -14,46 +14,45 @@ enum State {
 
 class Solution {
 public:
-    bool doesInclude(set<char> items, char item) {
-        return items.find(item) != items.end();
+    inline bool isDigit(char s){
+        return isdigit(s);
     }
     bool isSing(char s){
         return s == '-' || s == '+';
     }
+    bool isExponent(char s){
+        return s == 'e' || s == 'E';
+    }
     bool isNumber(string s) {
-        set<char> exponents = {'e', 'E'};
-        set<char> dots = {'.'};
-
         State state = start;
 
         for (int i = 0; i < s.size(); i++) {
             char character = s[i];
             if ((state == digit0 || state == digit1 || state == digit2 ||
                  state == digit3) &&
-                isdigit(character)) {
+                isDigit(character)) {
                 continue;
             } else if (state == start && isSing(character)) {
                 state = sing0;
-            } else if ((state == start || state == sing0) &&
-                       doesInclude(dots, character)) {
+            } else if ((state == start || state == sing0) && character == '.') {
                 state = dot0;
             } else if ((state == start || state == sing0) &&
-                       isdigit(character)) {
+                       isDigit(character)) {
                 state = digit0;
-            } else if (state == dot0 && isdigit(character)) {
+            } else if (state == dot0 && isDigit(character)) {
                 state = digit1;
-            } else if (state == digit0 && doesInclude(dots, character)) {
+            } else if (state == digit0 && character == '.') {
                 state = dot1;
-            } else if (state == dot1 &&  isdigit(character)) {
+            } else if (state == dot1 &&  isDigit(character)) {
                 state = digit2;
             } else if ((state == digit0 || state == digit1 || state == digit2 ||
                         state == dot1) &&
-                       doesInclude(exponents, character)) {
+                       isExponent(character)) {
                 state = exponent;
             } else if (state == exponent && isSing(character)) {
                 state = sing1;
             } else if ((state == sing1 || state == exponent) &&
-                       isdigit(character)) {
+                       isDigit(character)) {
                 state = digit3;
             }
             else
