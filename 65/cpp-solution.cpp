@@ -9,12 +9,12 @@ public:
 
         while(index < s.size()){
             char character = s[index];
-            cout << character << "|";
 
-            if (state == start || state == digit && isdigit(character)){
+            if ((state == start || state == digit) && isdigit(character)){
                 state = digit;
-            } else return false;
-            index++;
+                index++;
+                
+            } else break;
         }
 
         if (state == digit){
@@ -30,20 +30,31 @@ public:
         } state = start;
         
         int index = globalIndex;
-
+        // NOTE: it is required that each case add the necessary amount to the index, if not, it will not increase.
         while(index < s.size()){
-            char character = s[index];
-
-            cout << character << "|";
-    
             if (state == start && isDigit(s, index)){
+                cout << "digit0" << endl;
                 state = digit0;
-            } else if (state == start && character == '.'){       
+            } else if (state == digit0 && s[index] == '.'){
+                cout << "dot1"  << endl;
+                state = dot1;
+                
+                index++;
+
+            } else if (state == dot1 && isDigit(s, index)){
+                cout << "digit2"  << endl;
+
+                state = digit2;
+            } else if(state == start && s[index] == '.'){
+                cout << "dot0" << endl;
                 state = dot0;
-            }else if (state == dot0 && isDigit(s, index)){
+                index++;
+            }else if (state == dot0 && isDigit(s,index)){
+                cout << "digit1" << endl;
                 state = digit1;
-            }else return false;
-            index++;
+
+            }else break;
+
         }
 
 
@@ -66,13 +77,11 @@ public:
 
             if (state == start && (character == '+' || character == '-')){
                 state = sing;
-            } else {
-                return false;
-            }
+            } else break;
             index++;
         }
 
-        if (state !== sing) return false;
+        if (state != sing) return false;
 
         globalIndex = index;
         return true;
@@ -90,12 +99,10 @@ public:
                 state = sing;
             } else if((state == sing || state == start) && isRawNumber(s, index)){
                 state = rawNumber;
-
             } else return false;
-            index++;
         } 
 
 
-        return state == rawNumber || state == exponent;       
+        return (state == rawNumber || state == exponent) && index >= s.size();       
     }
 };
