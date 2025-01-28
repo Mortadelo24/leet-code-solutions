@@ -6,7 +6,7 @@ public:
         string decimalNumber =  R"((\d+\.)|(\d+\.\d+)|(\.\d+))";
         string number = integerNumber + "|" + decimalNumber;
         string exponent = R"([eE][+-]?\d+)"; 
-        string pattern = sing + '(' + number + ')' + '(' + exponent + ")?";
+        string pattern = '^' + sing + '(' + number + ')' + '(' + exponent + ")?$";
 
         return regex_match(s, regex(pattern));
     }
