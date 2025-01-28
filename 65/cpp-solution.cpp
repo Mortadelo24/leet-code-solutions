@@ -1,13 +1,63 @@
+enum State {
+    start,
+    digit0,
+    digit1,
+    digit2,
+    digit3,
+    dot0,
+    dot1,
+    sing0,
+    sing1,
+    exponent,
+    end
+};
+
 class Solution {
 public:
+    bool doesInclude(set<char> items, char item) {
+        return items.find(item) != items.end();
+    }
     bool isNumber(string s) {
-        string sing = R"((\+|-)?)";
-        string integerNumber =  R"(\d+)";
-        string decimalNumber =  R"((\d+\.)|(\d+\.\d+)|(\.\d+))";
-        string number = integerNumber + "|" + decimalNumber;
-        string exponent = R"([eE][+-]?\d+)"; 
-        string pattern = '^' + sing + '(' + number + ')' + '(' + exponent + ")?$";
+        set<char> sings = {'-', '+'};
+        set<char> digits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+        set<char> exponents = {'e', 'E'};
+        set<char> dots = {'.'};
 
-        return regex_match(s, regex(pattern));
+        State state = start;
+
+        for (int i = 0; i < s.size(); i++) {
+            char character = s[i];
+            if ((state == digit0 || state == digit1 || state == digit2 ||
+                 state == digit3) &&
+                doesInclude(digits, character)) {
+                continue;
+            } else if (state == start && doesInclude(sings, character)) {
+                state = sing0;
+            } else if ((state == start || state == sing0) &&
+                       doesInclude(dots, character)) {
+                state = dot0;
+            } else if ((state == start || state == sing0) &&
+                       doesInclude(digits, character)) {
+                state = digit0;
+            } else if (state == dot0 && doesInclude(digits, character)) {
+                state = digit1;
+            } else if (state == digit0 && doesInclude(dots, character)) {
+                state = dot1;
+            } else if (state == dot1 && doesInclude(digits, character)) {
+                state = digit2;
+            } else if ((state == digit0 || state == digit1 || state == digit2 ||
+                        state == dot1) &&
+                       doesInclude(exponents, character)) {
+                state = exponent;
+            } else if (state == exponent && doesInclude(sings, character)) {
+                state = sing1;
+            } else if ((state == sing1 || state == exponent) &&
+                       doesInclude(digits, character)) {
+                state = digit3;
+            } else
+                return false;
+        }
+
+        return true;
     }
 };
