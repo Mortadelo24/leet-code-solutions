@@ -1,68 +1,101 @@
-enum State {
-    start,
-    digit0,
-    digit1,
-    digit2,
-    digit3,
-    dot0,
-    dot1,
-    sing0,
-    sing1,
-    exponent,
-    end
-};
-
 class Solution {
 public:
-    inline bool isDigit(char s){
-        return isdigit(s);
-    }
-    inline bool isSing(char s){
-        return s == '-' || s == '+';
-    }
-    inline bool isExponent(char s){
-        return s == 'e' || s == 'E';
-    }
-    bool isNumber(string s) {
-        State state = start;
+    bool isDigit(string s, int& globalIndex){
+        enum {
+            start, digit
+        } state = start;
 
-        for (int i = 0; i < s.size(); i++) {
-            char character = s[i];
-            if ((state == digit0 || state == digit1 || state == digit2 ||
-                 state == digit3) &&
-                isDigit(character)) {
-                continue;
-            } else if (state == start && isSing(character)) {
-                state = sing0;
-            } else if ((state == start || state == sing0) && character == '.') {
-                state = dot0;
-            } else if ((state == start || state == sing0) &&
-                       isDigit(character)) {
-                state = digit0;
-            } else if (state == dot0 && isDigit(character)) {
-                state = digit1;
-            } else if (state == digit0 && character == '.') {
-                state = dot1;
-            } else if (state == dot1 &&  isDigit(character)) {
-                state = digit2;
-            } else if ((state == digit0 || state == digit1 || state == digit2 ||
-                        state == dot1) &&
-                       isExponent(character)) {
-                state = exponent;
-            } else if (state == exponent && isSing(character)) {
-                state = sing1;
-            } else if ((state == sing1 || state == exponent) &&
-                       isDigit(character)) {
-                state = digit3;
-            }
-            else
-                return false;
+        int index = globalIndex;
+
+        while(index < s.size()){
+            char character = s[index];
+            cout << character << "|";
+
+            if (state == start || state == digit && isdigit(character)){
+                state = digit;
+            } else return false;
+            index++;
         }
 
-        if (state == digit0 || state == digit1 || state == digit2 || state == digit3 || state == dot1){
-                return true;
+        if (state == digit){
+            globalIndex = index;
+            return true;
         }
 
         return false;
+    }
+    bool isRawNumber(string s, int& globalIndex){
+        enum {
+            start, digit0, dot0, dot1, digit1, digit2
+        } state = start;
+        
+        int index = globalIndex;
+
+        while(index < s.size()){
+            char character = s[index];
+
+            cout << character << "|";
+    
+            if (state == start && isDigit(s, index)){
+                state = digit0;
+            } else if (state == start && character == '.'){       
+                state = dot0;
+            }else if (state == dot0 && isDigit(s, index)){
+                state = digit1;
+            }else return false;
+            index++;
+        }
+
+
+        if (state == digit0 || state == digit1 || state == digit2 || state == dot1){
+            globalIndex = index;
+            return true;
+        }
+
+        return false;
+    }
+    bool isSing(string s, int& globalIndex){
+        enum {
+            start,
+            sing
+        } state = start;
+        int index = globalIndex;
+
+        while (index < s.size()){
+            char character = s[index];
+
+            if (state == start && (character == '+' || character == '-')){
+                state = sing;
+            } else {
+                return false;
+            }
+            index++;
+        }
+
+        if (state !== sing) return false;
+
+        globalIndex = index;
+        return true;
+    }
+    bool isNumber(string s) {
+        int index = 0;
+
+        enum {
+            start,
+            sing, rawNumber, exponent
+        } state = start;
+
+        while (index < s.size()){
+            if (state == start && isSing(s, index)){
+                state = sing;
+            } else if((state == sing || state == start) && isRawNumber(s, index)){
+                state = rawNumber;
+
+            } else return false;
+            index++;
+        } 
+
+
+        return state == rawNumber || state == exponent;       
     }
 };
