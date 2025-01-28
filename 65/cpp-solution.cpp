@@ -17,10 +17,10 @@ public:
     inline bool isDigit(char s){
         return isdigit(s);
     }
-    bool isSing(char s){
+    inline bool isSing(char s){
         return s == '-' || s == '+';
     }
-    bool isExponent(char s){
+    inline bool isExponent(char s){
         return s == 'e' || s == 'E';
     }
     bool isNumber(string s) {
