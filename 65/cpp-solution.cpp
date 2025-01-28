@@ -19,7 +19,6 @@ public:
     }
     bool isNumber(string s) {
         set<char> sings = {'-', '+'};
-        set<char> digits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
         set<char> exponents = {'e', 'E'};
         set<char> dots = {'.'};
 
@@ -29,7 +28,7 @@ public:
             char character = s[i];
             if ((state == digit0 || state == digit1 || state == digit2 ||
                  state == digit3) &&
-                doesInclude(digits, character)) {
+                isdigit(character)) {
                 continue;
             } else if (state == start && doesInclude(sings, character)) {
                 state = sing0;
@@ -37,13 +36,13 @@ public:
                        doesInclude(dots, character)) {
                 state = dot0;
             } else if ((state == start || state == sing0) &&
-                       doesInclude(digits, character)) {
+                       isdigit(character)) {
                 state = digit0;
-            } else if (state == dot0 && doesInclude(digits, character)) {
+            } else if (state == dot0 && isdigit(character)) {
                 state = digit1;
             } else if (state == digit0 && doesInclude(dots, character)) {
                 state = dot1;
-            } else if (state == dot1 && doesInclude(digits, character)) {
+            } else if (state == dot1 &&  isdigit(character)) {
                 state = digit2;
             } else if ((state == digit0 || state == digit1 || state == digit2 ||
                         state == dot1) &&
@@ -52,7 +51,7 @@ public:
             } else if (state == exponent && doesInclude(sings, character)) {
                 state = sing1;
             } else if ((state == sing1 || state == exponent) &&
-                       doesInclude(digits, character)) {
+                       isdigit(character)) {
                 state = digit3;
             }
             else
