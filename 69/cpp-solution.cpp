@@ -7,15 +7,16 @@ public:
         while (low < high){
             int mid = floor((low + high) / 2);
             int pow = mid * mid;
-            if(x > pow){
-                low = pow + 1; 
-            } else if (x < pow){
-                high = pow - 1;
-            }else {
-                cout << mid << endl;
-                return mid;
-            }
+            if (x < pow){
+                high = mid - 1;
+                continue;
+            }else if(x > pow){
+                low = mid + 1; 
+                continue;
+            }  
+            return mid;
+            
         }
-        return 0;
+        return (x <= 1)? low : low - 1;
     }
 };
