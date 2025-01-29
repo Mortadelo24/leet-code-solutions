@@ -3,20 +3,20 @@ public:
     int mySqrt(int x) {
         int low = 0;
         int high = x;
+        double mid;
 
         while (low < high){
-            int mid = floor((low + high) / 2);
-            int pow = mid * mid;
+            mid = (low + high) / 2;
+            double pow = mid * mid;
             if (x < pow){
                 high = mid - 1;
-                continue;
+                cout << "left" << endl;
             }else if(x > pow){
                 low = mid + 1; 
-                continue;
             }  
-            return mid;
-            
+            break;
         }
-        return (x <= 1)? low : low - 1;
+        cout << mid << endl;
+        return 0 ;
     }
 };
