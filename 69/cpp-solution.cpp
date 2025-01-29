@@ -1,6 +1,7 @@
 class Solution {
 public:
     int mySqrt(int x) {
+        if (x == 1) return 1;
         int low = 0;
         int high = x;
 
