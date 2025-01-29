@@ -1,24 +1,14 @@
 class Solution {
 public:
     int climbStairs(int n) {
-        stack<int> frontier;
-        frontier.push(n);
-        int variants = 0;
-
-        while (!frontier.empty()){
-            int currentState = frontier.top();
-            frontier.pop();
-            if (currentState <= 0){
-                variants++;
-            }else if (currentState >= 2){
-                frontier.push(currentState - 2);
-                frontier.push(currentState - 1);
-            } else {
-                frontier.push(currentState-1);
-            }
+        if (n == 1) return n;
+        int previousResult = 1;
+        int result = 2;
+        for (int i = 0; i < n - 2; i++){
+            int temp = result;
+            result += previousResult;
+            previousResult = temp;
         }
-
-        return variants;
-
+        return result;    
     }
 };
