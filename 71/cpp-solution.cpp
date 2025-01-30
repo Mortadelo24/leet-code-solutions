@@ -23,17 +23,20 @@ public:
                 for (index; path[index] != '/' && index < path.size(); index++);
                 string folder(path.begin()+start, path.begin()+index);
 
-                if (folder == ".") {
-                    pathStack.pop_back();
+                if (folder == "." || folder == ".."){
+                    int times = folder.size();
+                    if (times == 2) times++;
+                    for (int i = 0; i < times && !pathStack.empty(); i++){
+                        pathStack.pop_back();
+                    }
                     continue;
                 }
-
                 pathStack.push_back(folder);
 
             }
         }
-
-        if (pathStack.empty() || pathStack.front() != "/") pathStack.push_front("/");
+        if (pathStack.size() < 2 ) return "/";
+        if (pathStack.front() != "/") pathStack.push_front("/");
         if (pathStack.back() == "/") pathStack.pop_back();
         return convertToString(pathStack);
     }
