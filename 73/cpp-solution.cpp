@@ -9,15 +9,13 @@ public:
         }
         cout << endl;
     }
-    void generateRow(vector<vector<int>>& matrix, int index, int start = 0){
-        for (int i = start; i < matrix.front().size(); i++){
-            if (matrix[0][i] == 2) continue;
+    void generateRow(vector<vector<int>>& matrix, int index){
+        for (int i = 0; i < matrix.front().size(); i++){
             matrix[index][i] = 0;
         }
     }
-    void generateColumn(vector<vector<int>>& matrix, int index, int start = 0){
-        for (int i = start; i < matrix.size(); i++){
-            if (matrix[i][0] == 2) continue;
+    void generateColumn(vector<vector<int>>& matrix, int index){
+        for (int i = 0; i < matrix.size(); i++){
             matrix[i][index] = 0;
         }
     }
@@ -34,12 +32,14 @@ public:
             }
         }
         cout << "columns" << endl;
-        for (auto c : columns){
+        for (int cIndex : columns){
             cout << c << endl;
+            generateColumn(matrix, cIndex);
         }
         cout << "rows" << endl;
-        for (auto c : rows){
+        for (int rIndex : rows){
             cout << c << endl;
+            generateRow(matrix, rIndex);
         }
         printState(matrix);
     }
