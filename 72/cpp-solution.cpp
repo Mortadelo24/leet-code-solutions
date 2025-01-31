@@ -17,8 +17,14 @@ public:
 
         vector<vector<int*>> state(word2.size(), vector(word1.size(), (int*) nullptr));
 
+        for (int x = 0; x < word2.size(); x++){
+            for(int y = 0; y < word1.size(); y++){
+                if (word2[x] == word1[y]){
+                    state[x][y] = abs(x-y);
+                }
+            }
+        }
         printState(state);
-
 
         return 0;
     }
