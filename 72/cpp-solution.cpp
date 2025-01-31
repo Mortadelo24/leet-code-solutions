@@ -33,6 +33,7 @@ public:
                             
             }
         }
+        printState(state);
 
         return state.back().back();
     }
