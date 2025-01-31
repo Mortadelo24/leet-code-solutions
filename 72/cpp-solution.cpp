@@ -29,7 +29,7 @@ public:
                 int base = min(state[x-1][y], state[x][y-1]);
                 base = min(base, state[x-1][y-1]);
                 
-                state[x][y] = word1[x-1] != word2[y-1] ? base + 1 : base;
+                state[x][y] = word1[x-1] != word2[y-1] ? base + 1 : state[x-1][y-1];
                             
             }
         }
