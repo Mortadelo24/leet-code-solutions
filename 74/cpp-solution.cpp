@@ -2,14 +2,12 @@ class Solution {
 public:
     int getItem(vector<vector<int>>& matrix, int virtualIndex){
         int n = matrix.front().size();
-        // cout << "from: " << virtualIndex << endl;
         cout << virtualIndex/ n << "|" << virtualIndex%n << endl;
-        return 0;
-        // return matrix[floor( virtualIndex / n)][virtualIndex%n];
+        return matrix[floor( virtualIndex / n)][virtualIndex%n];
     }
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
         for (int i = 0; i < matrix.size() * matrix.front().size(); i++){
-            getItem(matrix, i);
+            cout << getItem(matrix, i) << endl;
         }
         return false;
     }
