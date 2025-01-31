@@ -33,12 +33,10 @@ public:
         }
         cout << "columns" << endl;
         for (int cIndex : columns){
-            cout << c << endl;
             generateColumn(matrix, cIndex);
         }
         cout << "rows" << endl;
         for (int rIndex : rows){
-            cout << c << endl;
             generateRow(matrix, rIndex);
         }
         printState(matrix);
