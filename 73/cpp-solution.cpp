@@ -12,20 +12,12 @@ public:
     void generateRow(vector<vector<int>>& matrix, int index, int start = 0){
         for (int i = start; i < matrix.front().size(); i++){
             if (matrix[0][i] == 2) continue;
-            if (matrix[index][i] == 0) {
-                generateRow(matrix, i, index);
-                matrix[index][i] = 2;
-                continue;
-            }
             matrix[index][i] = 0;
         }
     }
     void generateColumn(vector<vector<int>>& matrix, int index, int start = 0){
         for (int i = start; i < matrix.size(); i++){
             if (matrix[i][0] == 2) continue;
-            if (matrix[i][index] == 0) {
-                generateRow(matrix, i, index);
-            }
             matrix[i][index] = 0;
         }
     }
