@@ -21,7 +21,7 @@ public:
             for(int y = 0; y < word1.size(); y++){
                 int distance = abs(x-y);
             
-                if (word2[x] == word1[y] && (state[x][y] || distance < *(state[x][y])) ){
+                if (word2[x] == word1[y] && (!state[x][y] || distance < *(state[x][y])) ){
                     state[x][y] = new int(distance); 
                 }
             }
