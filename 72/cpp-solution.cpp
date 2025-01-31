@@ -18,7 +18,7 @@ public:
         vector<vector<int*>> state(word2.size(), vector(word1.size(), (int*) nullptr));
 
         for (int x = 0; x < word2.size(); x++){
-            for(int y = x; y < word1.size(); y++){
+            for(int y = 0; y < word1.size(); y++){
                 int distance = x-y;
                 int* currentCell = state[x][y];
             
