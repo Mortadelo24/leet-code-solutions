@@ -16,10 +16,11 @@ public:
 
         
 
-        for (int x = 0; x < word1.size(); x++){
-            for(int y = 0; y < word2.size(); y++){
+        for (int x = 0; x <= word1.size(); x++){
+            for(int y = 0; y <= word2.size(); y++){
                 if (x == 0){
                     state[x][y] = y;
+                    continue;
                 }
                 int a;
                 
