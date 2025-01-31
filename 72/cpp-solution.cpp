@@ -14,14 +14,12 @@ public:
     int minDistance(string word1, string word2) {
         if (word1.size() > word2.size()) swap(word1, word2);
         vector<vector<int>> state(word1.size() + 1, vector(word2.size() + 1, 0));
+        for (int x = 0; x <= word1.size(); x++) state[x][0] = x;
 
         for (int x = 0; x <= word1.size(); x++){
             for(int y = 0; y <= word2.size(); y++){
                 // fill initial state
-                if (x == 0){
-                    state[x][y] = y;
-                    continue;
-                } else if (y == 0){
+                if (y == 0){
                     state[x][y] = x;
                     continue;
                 }
