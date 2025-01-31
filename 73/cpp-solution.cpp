@@ -25,8 +25,7 @@ public:
         for (int i = 0; i < matrix.size(); i++ ){
             for(int j = 0; j < matrix.front().size(); j++){
                 if (matrix[i][j] == 0){
-                    matrix[i][0] = 2;
-                    generateRow(matrix, i, j);
+                   
                     matrix[0][j] = 2;
                     generateColumn(matrix, j, i );
                 }
