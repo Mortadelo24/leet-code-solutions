@@ -1,8 +1,8 @@
 class Solution {
 public:
-    void printState(vector<vector<auto>>& matrix){
-        for (vector<auto> row : matrix){
-            for (auto i : row){
+    void printState(vector<vector<int>>& matrix){
+        for (vector<int> row : matrix){
+            for (int i : row){
                 cout << i << " ";
             }
             cout << endl;
