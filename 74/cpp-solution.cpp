@@ -11,9 +11,13 @@ public:
         while(left < right){
             int midIndex = floor( (left+right)/2 );
             int mid = getItem(matrix, n, midIndex);
+            cout << mid << endl;
             if (mid < target){
+                cout << "go right" << endl;
                 left = midIndex + 1;
             } else if (mid > target){
+                cout << "go left" << endl;
+
                 right = midIndex - 1;
             } else return true;
         }
