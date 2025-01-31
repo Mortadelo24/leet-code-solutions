@@ -14,6 +14,8 @@ public:
             if (matrix[0][i] == 2) continue;
             if (matrix[index][i] == 0) {
                 generateRow(matrix, i, index);
+                matrix[index][i] = 2;
+                continue;
             }
             matrix[index][i] = 0;
         }
