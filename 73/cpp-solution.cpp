@@ -36,6 +36,9 @@ public:
         for (auto c : columns){
             cout << c << endl;
         }
+        for (auto c : rows){
+            cout << c << endl;
+        }
         printState(matrix);
     }
 };
