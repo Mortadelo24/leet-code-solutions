@@ -15,6 +15,7 @@ public:
         if (word1.size() > word2.size()) swap(word1, word2);
         vector<vector<int>> state(word1.size() + 1, vector(word2.size() + 1, 0));
         for (int x = 0; x <= word1.size(); x++) state[x][0] = x;
+        return 0;
 
         for (int x = 0; x <= word1.size(); x++){
             for(int y = 0; y <= word2.size(); y++){
