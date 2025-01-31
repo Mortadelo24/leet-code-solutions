@@ -6,7 +6,7 @@ public:
     }
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
         for (int i = 0; i <= matrix.size() + matrix.front().size(); i++){
-            cout <<  getItem(matrix, i); << endl;
+            cout <<  getItem(matrix, i) << endl;
         }
         return false;
     }
