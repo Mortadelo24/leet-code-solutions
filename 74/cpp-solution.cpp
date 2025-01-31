@@ -5,9 +5,20 @@ public:
     }
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
         int n = matrix.front().size();
-        for (int i = 0; i < matrix.size() * n; i++){
-            cout << getItem(matrix,n, i) << endl;
+        int left = 0;
+        int right = (matrix.size() * n) - 1;
+
+        while(left < right){
+            int midIndex = floor( (left+right)/2 );
+            int mid = getItem(matrix, n, midIndex);
+            if (mid < target){
+                left = midIndex + 1;
+            } else if (mid > target){
+                right = midIndex - 1;
+            } else return true;
         }
+
+      
         return false;
     }
 };
