@@ -21,6 +21,8 @@ public:
                 if (x == 0){
                     state[x][y] = y;
                     continue;
+                } else if (y == 0){
+                    state[x][y] = x;
                 }
                 int a;
                 
