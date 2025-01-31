@@ -16,7 +16,7 @@ public:
         vector<vector<int>> state(word1.size() + 1, vector(word2.size() + 1, 0));
 
         for (int x = 0; x <= word1.size(); x++){
-            for(int y = x; y <= word2.size(); y++){
+            for(int y = 0; y <= word2.size(); y++){
                 // fill initial state
                 if (x == 0){
                     state[x][y] = y;
