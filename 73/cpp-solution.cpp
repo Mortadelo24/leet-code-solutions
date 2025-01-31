@@ -1,5 +1,13 @@
 class Solution {
 public:
+    void printState(vector<vector<auto>>& matrix){
+        for (vector<auto> row : matrix){
+            for (auto i : row){
+                cout << i << " ";
+            }
+            cout << endl;
+        }
+    }
     void generateRow(vector<vector<int>>& matrix, int index){
         for (int i = 0; i < matrix.front().size(); i++){
             matrix[0][i] = 0;
@@ -14,5 +22,6 @@ public:
                 }
             }
         }
+        printState(matrix);
     }
 };
