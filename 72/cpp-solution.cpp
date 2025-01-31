@@ -28,7 +28,7 @@ public:
                     continue;
                 }
                 // end
-                
+                cout << x << "|" << y << endl;
                 int base = min(state[x-1][y], state[x][y-1]);
                 base = min(base, state[x-1][y-1]);
                 
