@@ -31,7 +31,7 @@ public:
                 int base = min(state[x-1][y], state[x][y-1]);
                 base = min(base, state[x-1][y-1]);
                 
-                state[x][y] = word1[x] != word2[x] ? base + 1 : base;
+                state[x][y] = word1[x] != word2[y] ? base + 1 : base;
                             
             }
         }
