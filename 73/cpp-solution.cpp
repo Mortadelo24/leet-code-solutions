@@ -8,8 +8,8 @@ public:
             cout << endl;
         }
     }
-    void generateRow(vector<vector<int>>& matrix, int index){
-        for (int i = 0; i < matrix.front().size(); i++){
+    void generateRow(vector<vector<int>>& matrix, int index, int start = 0){
+        for (int i = start; i < matrix.front().size(); i++){
             if (matrix[0][i] == 2) continue;
             matrix[index][i] = 0;
         }
@@ -20,7 +20,7 @@ public:
             for(int j = 0; j < matrix.front().size(); j++){
                 if (matrix[i][j] == 0){
                     matrix[i][0] = 2;
-                    generateRow(matrix, i);
+                    generateRow(matrix, i, j);
                 }
             }
         }
