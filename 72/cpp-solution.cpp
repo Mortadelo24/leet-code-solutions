@@ -18,13 +18,18 @@ public:
 
         for (int x = 0; x <= word1.size(); x++){
             for(int y = 0; y <= word2.size(); y++){
+                // fill initial state
                 if (x == 0){
                     state[x][y] = y;
                     continue;
                 } else if (y == 0){
                     state[x][y] = x;
+                    continue;
                 }
-                int a;
+                // end
+                
+                int base = min(state[x-1][y], state[x][y-1]);
+                cout << base << endl;
                 
             }
         }
