@@ -18,7 +18,7 @@ public:
         for (int i = 0; i < matrix.size(); i++ ){
             for(int j = 0; j < matrix.front().size(); j++){
                 if (matrix[i][j] == 0){
-                    generateRow(matrix, i);
+                    cout << i << " " << j << endl;
                 }
             }
         }
