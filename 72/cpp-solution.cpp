@@ -3,8 +3,7 @@ public:
     void printState(vector<vector<int>>& state){
         for (vector<int> row : state){
             for (int cell : row){
-                if (!cell) cout << "N";
-                else cout << *cell;
+                else cout << cell;
                 cout << " ";
             }
             cout << endl;
