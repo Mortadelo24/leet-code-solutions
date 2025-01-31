@@ -33,9 +33,11 @@ public:
                 }
             }
         }
+        cout << "columns" << endl;
         for (auto c : columns){
             cout << c << endl;
         }
+        cout << "rows" << endl;
         for (auto c : rows){
             cout << c << endl;
         }
