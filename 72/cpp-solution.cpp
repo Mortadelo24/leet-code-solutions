@@ -17,7 +17,7 @@ public:
 
         vector<vector<int*>> state(word2.size(), vector(word1.size(), (int*) nullptr));
 
-
+        printState(state);
 
 
         return 0;
