@@ -2,6 +2,7 @@ class Solution {
 public:
     int getItem(vector<vector<int>>& matrix, int virtualIndex){
         int n = matrix.front().size();
+        cout << "from: " << virtualIndex << endl;
         cout << virtualIndex / n << "|" << virtualIndex%n << endl;
         
         return 0;
