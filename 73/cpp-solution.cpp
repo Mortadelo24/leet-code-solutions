@@ -28,7 +28,7 @@ public:
                     matrix[i][0] = 2;
                     generateRow(matrix, i, j);
                     matrix[0][j] = 2;
-                    generateColumn(matrix, j );
+                    generateColumn(matrix, j, i );
                 }
             }
         }
