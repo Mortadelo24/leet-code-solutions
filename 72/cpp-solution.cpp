@@ -17,9 +17,6 @@ public:
         for (int x = 1; x <= word1.size(); x++) state[x][0] = x;
         for (int y = 1; y <= word2.size(); y++) state[0][y] = y;
 
-        printState(state);
-        return 0;
-
         for (int x = 0; x <= word1.size(); x++){
             for(int y = 0; y <= word2.size(); y++){
                 int base = min({state[x-1][y], state[x][y-1], state[x-1][y-1]});
