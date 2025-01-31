@@ -31,14 +31,11 @@ public:
                 }
             }
         }
-        cout << "columns" << endl;
         for (int cIndex : columns){
             generateColumn(matrix, cIndex);
         }
-        cout << "rows" << endl;
         for (int rIndex : rows){
             generateRow(matrix, rIndex);
         }
-        printState(matrix);
     }
 };
