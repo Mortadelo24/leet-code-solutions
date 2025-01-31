@@ -2,7 +2,7 @@ class Solution {
 public:
     void generateRow(vector<vector<int>>& matrix, int index){
         for (int i = 0; i < matrix.front().size(); i++){
-            matrix[0][i];
+            matrix[0][i] = 0
         }
     }
 
