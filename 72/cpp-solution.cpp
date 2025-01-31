@@ -18,10 +18,11 @@ public:
         vector<vector<int*>> state(word2.size(), vector(word1.size(), (int*) nullptr));
 
         for (int x = 0; x < word2.size(); x++){
-            for(int y = 0; y < word1.size(); y++){
+            for(int y = x; y < word1.size(); y++){
                 int distance = abs(x-y);
+                int* currentCell = state[x][y];
             
-                if (word2[x] == word1[y] && (!state[x][y] || distance < *(state[x][y])) ){
+                if (word2[x] == word1[y] && (!currentCell || distance < *currentCell) ){
                     state[x][y] = new int(distance); 
                 }
             }
