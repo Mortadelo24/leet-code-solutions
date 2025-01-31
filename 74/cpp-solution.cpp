@@ -5,7 +5,7 @@ public:
         return matrix[floor( virtualIndex / n)][virtualIndex%n];
     }
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
-        for (int i = 0; i <= matrix.size() + matrix.front().size(); i++){
+        for (int i = 0; i <= matrix.size() * matrix.front().size(); i++){
             cout <<  getItem(matrix, i) << endl;
         }
         return false;
