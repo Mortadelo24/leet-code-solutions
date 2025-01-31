@@ -30,8 +30,9 @@ public:
                 
                 int base = min(state[x-1][y], state[x][y-1]);
                 base = min(base, state[x-1][y-1]);
-                cout << base << endl;
                 
+                state[x][y] = word1[x] != word2[x] ? base + 1 : base;
+                            
             }
         }
         printState(state);
