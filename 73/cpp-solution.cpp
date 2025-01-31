@@ -15,7 +15,7 @@ public:
             matrix[index][i] = 0;
         }
     }
-    void generateColumn(vector<vector<int>>& matrix, int index, int start = 0){
+    void generateColumn(vector<vector<int>>& matrix, int index){
         for (int i = start; i < matrix.size(); i++){
             if (matrix[i][0] == 2) continue;
             matrix[i][index] = 0;
@@ -29,7 +29,6 @@ public:
                 if (matrix[i][j] == 0){
                     matrix[i][0] = 2;
                     generateRow(matrix, i, j);
-            printState(matrix);
 
                     matrix[0][j] = 2;
                     generateColumn(matrix, j, i );
