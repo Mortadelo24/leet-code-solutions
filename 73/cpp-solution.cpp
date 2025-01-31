@@ -27,6 +27,8 @@ public:
                 if (matrix[i][j] == 0){
                     matrix[i][0] = 2;
                     generateRow(matrix, i, j);
+            printState(matrix);
+
                     matrix[0][j] = 2;
                     generateColumn(matrix, j, i );
                 }
