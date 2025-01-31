@@ -28,7 +28,7 @@ public:
                     continue;
                 }
                 // end
-                cout << word1[x] << "|" << word2[y] << endl;
+                cout << word1[x-1] << "|" << word2[y-1] << endl;
                 int base = min(state[x-1][y], state[x][y-1]);
                 base = min(base, state[x-1][y-1]);
                 
