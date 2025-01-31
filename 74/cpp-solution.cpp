@@ -8,7 +8,7 @@ public:
         int left = 0;
         int right = (matrix.size() * n) - 1;
 
-        while(left < right){
+        while(left <= right){
             int midIndex = floor( (left+right)/2 );
             int mid = getItem(matrix, n, midIndex);
             cout << mid << endl;
