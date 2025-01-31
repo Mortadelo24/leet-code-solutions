@@ -9,7 +9,7 @@ public:
         }
         cout << endl;
     }
-    void generateRow(vector<vector<int>>& matrix, int index, ){
+    void generateRow(vector<vector<int>>& matrix, int index ){
         for (int i = 0; i < matrix.front().size(); i++){
             if (matrix[0][i] == 2) continue;
             matrix[index][i] = 0;
