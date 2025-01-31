@@ -19,7 +19,7 @@ public:
 
         for (int x = 0; x < word2.size(); x++){
             for(int y = x; y < word1.size(); y++){
-                int distance = abs(x-y);
+                int distance = x-y;
                 int* currentCell = state[x][y];
             
                 if (word2[x] == word1[y] && (!currentCell || distance < *currentCell) ){
