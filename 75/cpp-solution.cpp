@@ -19,9 +19,7 @@ public:
                 cout << total << endl;
                 swap(nums[total], nums[i]);
 
-                if (nums[total] == 0) red--;
-                else if (nums[total] == 1) white--;
-                else blue--;
+                
             }
         }
 
