@@ -20,6 +20,6 @@ public:
             else blue++;
         }
 
-      
+        cout << red + blue  + white << endl;
     }
 };
