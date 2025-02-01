@@ -1,13 +1,8 @@
 class Solution {
 public:
-    void printState(vector<int>& nums, set<int> marks){
+    void printState(vector<int>& nums){
         for (int i : nums) cout << i << " "; 
         cout << endl;
-        string lineMarked(nums.size(), ' '); 
-        for (int mark : marks){
-            lineMarked[mark * 2] = '^';
-        }
-        cout << lineMarked << endl;
     }
     void sortColors(vector<int>& nums) {
         int red = 0;
@@ -22,7 +17,7 @@ public:
 
             if (total != i){
                 cout << total << " <-> " << i << endl;  
-                printState(nums, {i, total});
+                printState(nums);
                 swap(nums[total], nums[i]);
             }
 
