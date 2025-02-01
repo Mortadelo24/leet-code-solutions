@@ -13,7 +13,7 @@ public:
 
             if (total != i){
                 swap(nums[total], nums[i]);
-                for (auto i : total) cout << i; 
+                for (int i : nums) cout << i; 
                 cout << endl;
                 cout << nums[total] << " <-> " << nums[i] << endl;  
             }
