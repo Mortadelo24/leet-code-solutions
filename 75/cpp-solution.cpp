@@ -5,15 +5,16 @@ public:
         int white = 0;
         int blue = 0;
 
-        int a (int a) {
-            return 0;
-        }
-
-        for (int i = 0; i < nums.size(); i++){
+        auto getTotal = [](int i) -> int {
             int total = 0;
             if (nums[i] == 0) total += red;
             if (nums[i] == 1) total += white;
             if (nums[i] == 2) total += blue;
+            return total;
+        };
+
+        for (int i = 0; i < nums.size(); i++){
+            int total = getTotal(i);
 
             if (nums[i] == 0) red++;
             else if (nums[i] == 1) white++;
