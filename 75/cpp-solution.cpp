@@ -5,7 +5,7 @@ public:
         cout << endl;
         string lineMarked(nums.size(), ' '); 
         for (int mark : marks){
-            lineMarked[i] = '^';
+            lineMarked[mark] = '^';
         }
         cout << lineMarked << endl;
     }
