@@ -15,7 +15,7 @@ public:
                 swap(nums[total], nums[i]);
                 for (int i : nums) cout << i << " "; 
                 cout << endl;
-                cout << nums[total] << " <-> " << nums[i] << endl;  
+                cout << total << " <-> " << i << endl;  
             }
 
             if (nums[i] == 0) red++;
