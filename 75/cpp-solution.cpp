@@ -11,6 +11,12 @@ public:
             if (nums[i] == 1) total += white;
             if (nums[i] == 2) total += blue;
 
+           
+
+            if (nums[i] == 0) red++;
+            else if (nums[i] == 1) white++;
+            else blue++;
+
             if (total != i){
                 cout << total << endl;
                 swap(nums[total], nums[i]);
@@ -18,11 +24,8 @@ public:
                 if (nums[total] == 0) red--;
                 else if (nums[total] == 1) white--;
                 else blue--;
+                i--;
             }
-
-            if (nums[i] == 0) red++;
-            else if (nums[i] == 1) white++;
-            else blue++;
         }
 
     }
