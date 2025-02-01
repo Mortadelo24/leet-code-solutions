@@ -4,11 +4,12 @@ public:
         for (int i : nums) cout << i << " "; 
         cout << endl;
         for (int i = 0; i < nums.size(); i++) {
-            cout << "  ";
-            if (i == mark) {
+             if (i == mark) {
                 cout << "^";
                 break;
             }
+            cout << "  ";
+           
         } 
         cout << endl;
     }
