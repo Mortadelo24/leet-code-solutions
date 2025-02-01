@@ -12,8 +12,9 @@ public:
             if (nums[i] == 2) total += blue;
 
             if (total != i){
-                cout << total << endl;
                 swap(nums[total], nums[i]);
+                for (auto i : total) cout << i; 
+                cout << endl;
                 cout << nums[total] << " <-> " << nums[i] << endl;  
             }
 
