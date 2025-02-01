@@ -5,7 +5,7 @@ public:
         for (int i = 0; i < nums.size(); i++) {
             cout << " ";
             if (i == mark) {
-                cout << *;
+                cout << "^";
                 break;
             }
         } 
