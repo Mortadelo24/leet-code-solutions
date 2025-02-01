@@ -6,7 +6,10 @@ public:
         int blue = 0;
 
         for (int i = 0; i < nums.size(); i++){
-            int total = red + white + blue; 
+            int total = 0;
+            if (nums[i] == 0) total += red;
+            if (nums[i] == 1) total += white;
+            if (nums[i] == 2) total += blue;
 
             cout << total << endl;
 
