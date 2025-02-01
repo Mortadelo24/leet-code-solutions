@@ -10,18 +10,21 @@ public:
         int white = 0;
         int blue = 0;
 
-        for (int i = 0; i < nums.size(); i++) {
-            if (nums[i] == 0)
+        for (auto it : nums) {
+            if (it == 0)
                 red++;
-            else if (nums[i] == 1)
+            else if (it == 1)
                 white++;
             else
                 blue++;
         }
         int i = 0;
-        for (i; i < red; i++) nums[i] = 0;
-        for (i; i < white + red; i++) nums[i] = 1;
-        for (i; i < blue + red + white; i++) nums[i] = 2;
+        int j = red;
+        for (i; i < j; i++) nums[i] = 0;
+        j + white;
+        for (i; i < j; i++) nums[i] = 1;
+        j + blue;
+        for (i; i < j; i++) nums[i] = 2;
 
     }
 };
