@@ -11,7 +11,9 @@ public:
             if (nums[i] == 1) total += white;
             if (nums[i] == 2) total += blue;
 
-            cout << total << endl;
+            if (total != i){
+                cout << total << endl;
+            }
 
             if (nums[i] == 0) red++;
             else if (nums[i] == 1) white++;
