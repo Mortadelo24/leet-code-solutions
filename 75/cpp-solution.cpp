@@ -21,9 +21,9 @@ public:
         int i = 0;
         int j = red;
         for (i; i < j; i++) nums[i] = 0;
-        j + white;
+        j += white;
         for (i; i < j; i++) nums[i] = 1;
-        j + blue;
+        j += blue;
         for (i; i < j; i++) nums[i] = 2;
 
     }
