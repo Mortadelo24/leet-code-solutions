@@ -5,7 +5,7 @@ public:
         int white = 0;
         int blue = 0;
 
-        auto getTotal = [](int i) -> int {
+        auto getTotal = [nums](int i) -> int {
             int total = 0;
             if (nums[i] == 0) total += red;
             if (nums[i] == 1) total += white;
