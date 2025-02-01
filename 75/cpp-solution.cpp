@@ -22,7 +22,7 @@ public:
 
             if (total != i){
                 cout << total << " <-> " << i << endl;  
-                printState(nums, {total, i});
+                printState(nums, {i, total});
                 swap(nums[total], nums[i]);
             }
 
