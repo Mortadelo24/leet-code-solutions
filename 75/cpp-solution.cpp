@@ -16,8 +16,8 @@ public:
             if (nums[i] == 2) total += blue;
 
             if (total != i){
-                swap(nums[total], nums[i]);
                 printState(nums);
+                swap(nums[total], nums[i]);
                 cout << total << " <-> " << i << endl;  
             }
 
