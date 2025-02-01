@@ -3,7 +3,7 @@ public:
     void printState(vector<int>& nums, set<int> marks){
         for (int i : nums) cout << i << " "; 
         cout << endl;
-        string lineMarked(nums.size(), " "); 
+        string lineMarked(nums.size(), ' '); 
         for (int mark : marks){
             lineMarked[i] = "^";
         }
