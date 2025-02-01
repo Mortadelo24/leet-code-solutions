@@ -13,6 +13,7 @@ public:
 
             if (total != i){
                 cout << total << endl;
+                swap(nums[total], nums[i]);
             }
 
             if (nums[i] == 0) red++;
@@ -20,6 +21,5 @@ public:
             else blue++;
         }
 
-        cout << red + blue  + white << endl;
     }
 };
