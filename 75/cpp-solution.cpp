@@ -5,6 +5,10 @@ public:
         int white = 0;
         int blue = 0;
 
+        int a (int a) {
+            return 0;
+        }
+
         for (int i = 0; i < nums.size(); i++){
             int total = 0;
             if (nums[i] == 0) total += red;
