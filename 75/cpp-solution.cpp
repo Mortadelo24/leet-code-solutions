@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void printState(vector<int>& nums int mark = -1){
+    void printState(vector<int>& nums, int mark = -1){
         for (int i : nums) cout << i << " "; 
         for (int i = 0; i < nums.size(); i++) {
             cout << " ";
