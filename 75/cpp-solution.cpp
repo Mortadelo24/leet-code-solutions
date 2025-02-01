@@ -2,8 +2,9 @@ class Solution {
 public:
     void printState(vector<int>& nums, int mark = -1){
         for (int i : nums) cout << i << " "; 
+        cout << endl;
         for (int i = 0; i < nums.size(); i++) {
-            cout << " ";
+            cout << "  ";
             if (i == mark) {
                 cout << "^";
                 break;
