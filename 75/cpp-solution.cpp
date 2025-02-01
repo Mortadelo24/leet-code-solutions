@@ -1,5 +1,9 @@
 class Solution {
 public:
+    void printState(vector<int>& nums){
+        for (int i : nums) cout << i << " "; 
+        cout << endl;
+    }
     void sortColors(vector<int>& nums) {
         int red = 0;
         int white = 0;
@@ -13,8 +17,7 @@ public:
 
             if (total != i){
                 swap(nums[total], nums[i]);
-                for (int i : nums) cout << i << " "; 
-                cout << endl;
+                printState(nums);
                 cout << total << " <-> " << i << endl;  
             }
 
