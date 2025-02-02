@@ -10,6 +10,7 @@ public:
     }
 
     string minWindow(string s, string t) {
+        if (t.size() > s.size()) return "";
         unordered_map<char, int> state;
 
         // map each char from t as a negative number (it represents the lack of value)
