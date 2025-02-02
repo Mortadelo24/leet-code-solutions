@@ -41,8 +41,10 @@ public:
                 right++;
             } else break;
         }
-        cout << charCounter << endl;
-        cout << s.size() << endl;
+        // return a clear string if there is no matching substring
+        if (charCounter != stateSize) return "";
+        
+        
         printState(state);
         
 
