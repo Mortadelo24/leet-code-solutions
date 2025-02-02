@@ -41,7 +41,7 @@ public:
                 right++;
             } else break;
         }
-        cout << right << endl;; 
+        cout << charCounter << endl;
         cout << s.size() << endl;
         printState(state);
         
