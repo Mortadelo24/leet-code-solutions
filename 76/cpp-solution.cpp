@@ -43,6 +43,10 @@ public:
         }
         // return a clear string if there is no matching substring
         if (charCounter != stateSize) return "";
+
+        // answer
+        int answerStart = left;
+        int answerEnd = right;
         
         // reduce and move 
         //!!! use s[i] as key for hashmap 
@@ -74,6 +78,6 @@ public:
         printState(state);
         
 
-        return "NOValue";
+        return string(s.begin() + answerStart, s.begin() + answerEnd);
     }
 };
