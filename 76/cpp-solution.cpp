@@ -48,9 +48,9 @@ public:
 
         while(right < s.size()){
             // substract left char if it is one of the targets and increment left by one
-            // if (doesIncludeKey(state, s[left])){
-            //     state[left]--;
-            // }
+            if (doesIncludeKey(state, s[left])){
+                state[left];
+            }
             left++;
             // temporaly left as true because there is way to count the correct char states yet
             if (true){
