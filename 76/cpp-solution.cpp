@@ -65,7 +65,10 @@ public:
                 cout << "a" << endl;
             }
             cout << left << "|" << s[right] << endl;
-            
+            if (right >= s.size() - 1) {
+                right--;
+                break;
+            }
         }
         printState(state);
         
