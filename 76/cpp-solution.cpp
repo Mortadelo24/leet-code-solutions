@@ -27,7 +27,10 @@ public:
         int right = 0;
 
         while (true){
+            if (doesIncludeKey(state, s[right])) state[s[right]]++;
 
+            
+            // increase right
             if (right < s.size() - 1){
                 right++;
             } else break;
