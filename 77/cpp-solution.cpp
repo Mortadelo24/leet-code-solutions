@@ -9,7 +9,7 @@ public:
             cout << i << endl;
         }
 
-
+        combinations.push_back(numbers);
 
         return combinations;
     }
