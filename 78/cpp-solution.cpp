@@ -4,9 +4,9 @@ public:
         combinations.push_back(base);
         index++;
         for (index; index < nums.size(); index++){
-            cout << index << endl;
+            base.push_back(nums[index]);
             generateCombination(combinations, nums, base, index);
-
+            base.pop_back();
         }
 
     }  
