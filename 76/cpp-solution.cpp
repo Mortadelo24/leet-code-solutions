@@ -54,6 +54,8 @@ public:
             // substract left char if it is one of the targets and increment left by one
             if (doesIncludeKey(state, s[left])){
                 state[s[left]]--;
+                if (state[s[right]] == 0) charCounter++;
+                else if(state[s[right]] == -1) charCounter--;
             }
             left++;
             // temporaly left as true because there is way to count the correct char states yet
@@ -63,7 +65,8 @@ public:
                 right++;
                 if (doesIncludeKey(state, s[right])){
                     state[s[right]]++;
-                   
+                    if (state[s[right]] == 0) charCounter++;
+                    else if(state[s[right]] == 1) charCounter--;
                 }
             }else {
                 // possible anwer
