@@ -26,10 +26,13 @@ public:
         int left = 0;
         int right = 0;
 
-        while (right < s.size()){
-            right++;
+        while (true){
+
+            if (right < s.size() - 1){
+                right++;
+            } else break;
         }
-        cout << right; 
+        cout << right << endl;; 
 
         printState(state);
         
