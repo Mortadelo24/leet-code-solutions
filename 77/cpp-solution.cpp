@@ -7,9 +7,9 @@ public:
         }
         int start = base.empty() ? 0 : base.back();
         for (int i = start + 1; i <= n; i++){
-            vector<int> newBase(base);
-            newBase.push_back(i);
-            generateCombinations(combinations, n, k, newBase);
+            base.push_back(i);
+            generateCombinations(combinations, n, k, base);
+            base.pop_back();
         }
     }
     vector<vector<int>> combine(int n, int k) {
