@@ -58,8 +58,7 @@ public:
                 state[s[left]]--;
                 // update charCounter
 
-                if (state[s[left]] == 0) charCounter++;
-                else if(state[s[left]] == -1) charCounter--;
+                if (state[s[left]] == -1) charCounter--;
             }
             left++;
             // temporaly left as true because there is way to count the correct char states yet
@@ -71,15 +70,11 @@ public:
                     state[s[right]]++;
                     // update charCounter
                     if (state[s[right]] == 0) charCounter++;
-                    else if(state[s[right]] == 1) charCounter--;
                 }
             }else {
                 // possible anwer
-                
                 answerStart = left;
                 answerEnd = right;
-            cout << left << "|" << right << endl;
-
             }
           
 
