@@ -6,6 +6,7 @@ public:
         }
     }
     bool doesIncludeKey(unordered_map<char, int>& state, char key){
+        cout << "key: " << key << endl;
         return state.find(key) != state.end();
     }
     string minWindow(string s, string t) {
