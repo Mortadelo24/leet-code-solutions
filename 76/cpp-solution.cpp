@@ -41,6 +41,8 @@ public:
                 right++;
             } else break;
         }
+
+        cout << left << "|" << right << endl;
         // return a clear string if there is no matching substring
         if (charCounter != stateSize) return "";
 
@@ -73,6 +75,7 @@ public:
                 }
             }else {
                 // possible anwer
+                
                 answerStart = left;
                 answerEnd = right;
             }
