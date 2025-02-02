@@ -54,17 +54,20 @@ public:
             // substract left char if it is one of the targets and increment left by one
             if (doesIncludeKey(state, s[left])){
                 state[s[left]]--;
+                // update charCounter
+
                 if (state[s[left]] == 0) charCounter++;
                 else if(state[s[left]] == -1) charCounter--;
             }
             left++;
             // temporaly left as true because there is way to count the correct char states yet
-            if (true){
+            if (charCounter < stateSize){
                 // this will only be executed if the state is not valid
                 // increment right by one and if right char is in targets increment its value
                 right++;
                 if (doesIncludeKey(state, s[right])){
                     state[s[right]]++;
+                    // update charCounter
                     if (state[s[right]] == 0) charCounter++;
                     else if(state[s[right]] == 1) charCounter--;
                 }
