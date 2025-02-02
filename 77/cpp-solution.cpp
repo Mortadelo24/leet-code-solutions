@@ -6,10 +6,10 @@ public:
         iota(numbers.begin(), numbers.end(), 1);
         
         for (int i = 0; i < n - k + 1; i++){
-            cout << i << endl;
+            combinations.push_back(vector(numbers.begin()+i, numbers.begin()+k));
+            
         }
 
-        combinations.push_back(numbers);
 
         return combinations;
     }
