@@ -64,12 +64,11 @@ public:
                 if (doesIncludeKey(state, s[right])){
                     state[s[right]]++;
                 }
-            cout << string(s.begin()+left, s.begin()+right) << endl;
-
             }else {
                 // possible anwer
                 cout << "a" << endl;
             }
+            cout << string(s.begin()+left, s.begin()+right + 1) << endl;
             printState(state);
             // control the string overflow (it is needed the right index to always end in the last index)
             if (right >= s.size() - 1) {
@@ -80,6 +79,6 @@ public:
         
         
 
-        return string(s.begin() + answerStart, s.begin() + answerEnd);
+        return string(s.begin() + answerStart, s.begin() + answerEnd + 1);
     }
 };
