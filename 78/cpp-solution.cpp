@@ -5,6 +5,8 @@ public:
         index++;
         for (index; index < nums.size(); index++){
             cout << index << endl;
+            generateCombination(combinations, nums, base, index);
+
         }
 
     }  
