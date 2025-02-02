@@ -9,7 +9,7 @@ public:
     vector<vector<int>> combine(int n, int k) {
         vector<vector<int>> combinations;
         
-        generateCombinations(combination, n, k, {});
+        generateCombinations(combinations, n, k, {});
 
 
         return combinations;
