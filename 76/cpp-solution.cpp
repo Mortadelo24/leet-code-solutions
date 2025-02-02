@@ -3,8 +3,12 @@ public:
     string minWindow(string s, string t) {
         unordered_map<char, int> state;
 
-        state['a'] = 2;
-        cout << state['a'] << endl;
+        for (char i : t){
+            if (state.find(i) == state.end()){
+                state[i] = 0;
+            }
+            state[i]++;
+        }
 
         return "";
     }
