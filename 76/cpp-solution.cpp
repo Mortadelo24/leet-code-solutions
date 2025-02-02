@@ -13,7 +13,7 @@ public:
             if (state.find(i) == state.end()){
                 state[i] = 0;
             }
-            state[i]++;
+            state[i]--;
         }
 
         printState(state);
