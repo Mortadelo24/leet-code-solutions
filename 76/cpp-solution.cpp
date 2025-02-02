@@ -6,7 +6,6 @@ public:
         }
     }
     bool doesIncludeKey(unordered_map<char, int>& state, char key){
-        cout << "key: " << key << endl;
         return state.find(key) != state.end();
     }
     string minWindow(string s, string t) {
@@ -28,9 +27,10 @@ public:
         int right = 0;
 
         while (true){
-            if (doesIncludeKey(state, s[right])) state[s[right]]++;
+            char key = s[right];
+            if (doesIncludeKey(state, key)) state[key]++;
             // the value 0 represents that all required chars of that kind were found
-            if (state[s[right]] == 0) charCounter++;
+            if (state[key] == 0) charCounter++;
             // stop if all required chars were found.
             if (charCounter == stateSize) break;
             // increase right
