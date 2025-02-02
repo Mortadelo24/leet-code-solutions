@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void generateCombinations(vector<vector<int>> combinations, int n, int k, vector<int> base = {}){
+    void generateCombinations(vector<vector<int>>& combinations, int n, int k, vector<int> base = {}){
         if (base.size() == 1) {
             combinations.push_back(base);
             return;
