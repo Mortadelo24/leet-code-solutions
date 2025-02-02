@@ -60,6 +60,9 @@ public:
                 if (doesIncludeKey(state, s[right])){
                     state[s[right]]++;
                 }
+            }else {
+                // possible anwer
+                cout << "a" << endl;
             }
             cout << left << "|" << right << endl;
             
