@@ -1,5 +1,10 @@
 class Solution {
 public:
+    void printState(unordered_map<char, int>& state){
+        for (const auto& pair : state) {
+            std::cout << pair.first << ": " << pair.second << std::endl;
+        }
+    }
     string minWindow(string s, string t) {
         unordered_map<char, int> state;
 
@@ -9,6 +14,7 @@ public:
             }
             state[i]++;
         }
+        
 
         return "";
     }
