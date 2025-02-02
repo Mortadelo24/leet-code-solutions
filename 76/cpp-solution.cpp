@@ -57,9 +57,9 @@ public:
                 // this will only be executed if the state is not valid
                 // increment right by one and if right char is in targets increment its value
                 right++;
-                if (doesIncludeKey(state, s[right])){
-                    state[right]++;
-                }
+                // if (doesIncludeKey(state, s[right])){
+                //     state[right]++;
+                // }
             }
             
         }
