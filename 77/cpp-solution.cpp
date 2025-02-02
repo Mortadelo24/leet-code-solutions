@@ -4,7 +4,10 @@ public:
         vector<int> numbers(n);
         vector<vector<int>> combinations;
         iota(numbers.begin(), numbers.end(), 1);
-        combinations.push_back(numbers);
+        
+        for (int i = 0; i < n - k){
+            cout << i << endl;
+        }
 
 
 
