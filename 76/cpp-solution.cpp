@@ -74,13 +74,14 @@ public:
             }
             cout << string(s.begin()+left, s.begin()+right + 1) << endl;
             printState(state);
+            cout << "charCounter>: " << charCounter << endl;
+
             // control the string overflow (it is needed the right index to always end in the last index)
             if (right >= s.size() - 1) {
                 right--;
                 break;
             }
         }
-        cout << "charCounter>: " << charCounter << endl;
         
 
         return string(s.begin() + answerStart, s.begin() + answerEnd + 1);
