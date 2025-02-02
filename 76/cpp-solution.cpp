@@ -61,6 +61,7 @@ public:
                     state[s[right]]++;
                 }
             }
+            cout << left << "|" << right << endl;
             
         }
         printState(state);
