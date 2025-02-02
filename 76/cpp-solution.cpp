@@ -28,9 +28,12 @@ public:
 
         while (true){
             char key = s[right];
-            if (doesIncludeKey(state, key)) state[key]++;
-            // the value 0 represents that all required chars of that kind were found
-            if (state[key] == 0) charCounter++;
+            if (doesIncludeKey(state, key)) {
+                state[key]++;
+                // the value 0 represents that all required chars of that kind were found
+                if (state[key] == 0) charCounter++;
+            }
+           
             // stop if all required chars were found.
             if (charCounter == stateSize) break;
             // increase right
