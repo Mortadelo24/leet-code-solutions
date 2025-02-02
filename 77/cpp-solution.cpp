@@ -1,7 +1,7 @@
 class Solution {
 public:
     void generateCombinations(vector<vector<int>>& combinations, int n, int k, vector<int> base = {}){
-        if (base.size() == 1) {
+        if (base.size() == k) {
             combinations.push_back(base);
             return;
         }
