@@ -42,7 +42,7 @@ public:
             } else break;
         }
         cout << right << endl;; 
-
+        cout << s.size() << endl;
         printState(state);
         
 
