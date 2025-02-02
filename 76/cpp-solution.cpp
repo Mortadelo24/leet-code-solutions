@@ -4,6 +4,7 @@ public:
         unordered_map<char, int> state;
 
         state['a'] = 2;
+        cout << state['a'] << endl;
 
         return "";
     }
