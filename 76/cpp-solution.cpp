@@ -64,7 +64,8 @@ public:
                 // possible anwer
                 cout << "a" << endl;
             }
-            cout << left << "|" << s[right] << endl;
+            cout << string(s.begin()+left, s.begin()+right) << endl;
+            // control the string overflow (it is needed the right index to always end in the last index)
             if (right >= s.size() - 1) {
                 right--;
                 break;
