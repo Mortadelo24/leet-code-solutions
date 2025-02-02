@@ -1,9 +1,11 @@
 class Solution {
 public:
-    void generateCombination(vector<vector<int>>& combinations,vector<int>& nums, vector<int>& base, int index = 0){
+    void generateCombination(vector<vector<int>>& combinations,vector<int>& nums, vector<int>& base, int index = -1){
         combinations.push_back(base);
+        index++;
         for (index; index < nums.size(); index++){
             cout << index << endl;
+            generateCombination(combinations, nums, bas, index)
         }
 
     }  
