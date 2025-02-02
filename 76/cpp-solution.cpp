@@ -64,7 +64,7 @@ public:
                 // possible anwer
                 cout << "a" << endl;
             }
-            cout << left << "|" << right << endl;
+            cout << left << "|" << s[right] << endl;
             
         }
         printState(state);
