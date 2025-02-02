@@ -62,6 +62,7 @@ public:
             left++;
             // temporaly left as true because there is way to count the correct char states yet
             if (charCounter < stateSize){
+                cout << "moveRight" << endl;
                 // this will only be executed if the state is not valid
                 // increment right by one and if right char is in targets increment its value
                 right++;
