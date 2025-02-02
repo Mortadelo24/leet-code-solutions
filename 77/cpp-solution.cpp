@@ -2,7 +2,7 @@ class Solution {
 public:
     void generateCombinations(vector<vector<int>> combinations, int n, int k, vector<int> base = {}){
         int start = base.empty() ? 0 : base.back();
-        for (int i = start; i <= n; i++){
+        for (int i = start + 1; i <= n; i++){
             cout << i << endl;
         }
     }
