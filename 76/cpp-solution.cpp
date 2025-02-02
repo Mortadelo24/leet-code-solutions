@@ -45,11 +45,11 @@ public:
         if (charCounter != stateSize) return "";
         
         // reduce and move 
-
+        //!!! use s[i] as key for hashmap 
         while(right < s.size()){
             // substract left char if it is one of the targets and increment left by one
             if (doesIncludeKey(state, s[left])){
-                state[left];
+                state[s[left]];
             }
             left++;
             // temporaly left as true because there is way to count the correct char states yet
@@ -57,9 +57,9 @@ public:
                 // this will only be executed if the state is not valid
                 // increment right by one and if right char is in targets increment its value
                 right++;
-                // if (doesIncludeKey(state, s[right])){
-                //     state[right]++;
-                // }
+                if (doesIncludeKey(state, s[right])){
+                    state[s[right]]++;
+                }
             }
             
         }
