@@ -63,10 +63,12 @@ public:
                 right++;
                 if (doesIncludeKey(state, s[right])){
                     state[s[right]]++;
+                    if (state[s[right]] == 0) charCounter++;
+                    else if(state[s[right]] == 1) charCounter--;
                 }
             }else {
                 // possible anwer
-                cout << "a" << endl;
+                cout << "possible Answer" << endl;
             }
             cout << string(s.begin()+left, s.begin()+right + 1) << endl;
             printState(state);
@@ -76,7 +78,7 @@ public:
                 break;
             }
         }
-        
+        cout << "charCounter>: " << charCounter << endl;
         
 
         return string(s.begin() + answerStart, s.begin() + answerEnd + 1);
