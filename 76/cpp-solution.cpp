@@ -77,9 +77,10 @@ public:
                 
                 answerStart = left;
                 answerEnd = right;
+            cout << left << "|" << right << endl;
+
             }
           
-            cout << left << "|" << right << endl;
 
             // control the string overflow (it is needed the right index to always end in the last index)
             if (right >= s.size()) {
