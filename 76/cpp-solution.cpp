@@ -5,16 +5,31 @@ public:
             std::cout << pair.first << ": " << pair.second << std::endl;
         }
     }
+    bool doesIncludeKey(unordered_map<char, int>& state, char key){
+        return state.find(i) != state.end();
+    }
     string minWindow(string s, string t) {
         unordered_map<char, int> state;
 
-        // map t in hash_map
+        // map each char from t as a negative number (it represents the lack of value)
         for (char i : t){
-            if (state.find(i) == state.end()){
+            if (!doesIncludeKey(state, i)){
                 state[i] = 0;
             }
             state[i]--;
         }
+
+        // open windows: move only the right pointer
+        int stateSize = state.size();
+        int charCounter = 0;
+        
+        int left = 0;
+        int right = 0;
+
+        while (right < s.size()){
+            right++;
+        }
+        cout << right; 
 
         printState(state);
         
