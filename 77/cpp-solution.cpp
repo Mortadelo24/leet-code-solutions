@@ -5,7 +5,7 @@ public:
         vector<vector<int>> combinations;
         iota(numbers.begin(), numbers.end(), 1);
         
-        for (int i = 0; i < n - k; i++){
+        for (int i = 0; i < n - k + 1; i++){
             cout << i << endl;
         }
 
