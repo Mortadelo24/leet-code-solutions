@@ -49,14 +49,17 @@ public:
         for (char a : word){
             characters[a] += 1;
         }
-        for (pair<char, int> c : characters){
-            cout << c.second << endl;
-        }
+      
 
         for (int i = 0; i < board.size(); i++){
             for (int j = 0; j < board.front().size(); j++){
-                
+                if (characters.find(board[i][j]) != characters.end()){
+                    characters[j]--;
+                }
             }
+        }
+        for (pair<char, int> c : characters){
+           cout << c.second << endl;
         }
         // if (board[i][j] == word.front()){
         //             state.push_back({i,j});
