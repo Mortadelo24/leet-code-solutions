@@ -11,8 +11,9 @@ public:
                 if ((pair<int, int>){i,j} == boardCoordenates) continue;
                 cout << board[i][j] << " ";
             }
-            cout << endl;
         }
+        cout << endl;
+
 
         return false;
     }
