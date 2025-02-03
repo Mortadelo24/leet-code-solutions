@@ -3,7 +3,8 @@ public:
     bool includesMove(set<pair<int, int>>& state, pair<int, int> move){
         return state.find(move) != state.end();        
     }
-    bool solveWord(vector<vector<char>>& board, string& word, set<pair<int, int>>& state, pair<int, int> boardCoordenates, int wordIndex){   
+    bool solveWord(vector<vector<char>>& board, string& word, set<pair<int, int>>& state, pair<int, int> boardCoordenates, int wordIndex){    
+        cout << wordIndex << "|" << state.size() << endl;
         if (word.size() == state.size()) {
             return true;
         }
