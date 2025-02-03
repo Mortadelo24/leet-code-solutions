@@ -10,7 +10,7 @@ public:
             for (int j = boardCoordenates.second == 0 ? 0 : boardCoordenates.second  - 1; j <= boardCoordenates.second + 1 && j < board.front().size(); j++){
                 pair<int, int> tempMove = {i,j};
                 if (tempMove == boardCoordenates) continue;
-                cout << includesMove(state, tempMove) << " ";
+                cout << !includesMove(state, tempMove) && board[i][j] == word[wordIndex] << " ";
             }
         }
         cout << endl;
