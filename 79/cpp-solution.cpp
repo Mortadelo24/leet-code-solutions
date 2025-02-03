@@ -6,8 +6,8 @@ public:
     bool solveWord(vector<vector<char>>& board, string& word, set<pair<int, int>>& state, pair<int, int> boardCoordenates, int wordIndex){
         cout << includesMove(state, boardCoordenates) << endl;
        
-        for (int i = boardCoordenates.first - 1; i <= boardCoordenates.first + 1 && i < board.size(); i++ ){
-            for (int j = boardCoordenates.second - 1; j <= boardCoordenates.second + 1 && i < board.front().size(); j++){
+        for (int i = boardCoordenates.first == 0 ? 0 : boardCoordenates.first  - 1; i <= boardCoordenates.first + 1 && i < board.size(); i++ ){
+            for (int j = boardCoordenates.second == 0 ? 0 : boardCoordenates.second  - 1; j <= boardCoordenates.second + 1 && i < board.front().size(); j++){
                 cout << i << "|" << j << endl;
                 // cout << board[i][j] << " ";
             }
