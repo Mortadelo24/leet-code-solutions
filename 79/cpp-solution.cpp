@@ -1,10 +1,11 @@
 class Solution {
 public:
     bool includesMove(set<pair<int, int>>& state, pair<int, int> move){
+
         return false;        
     }
-    bool solveWord(vector<vector<char>>& board, string& word, set<pair<int, int>>& state, int wordIndex){
-
+    bool solveWord(vector<vector<char>>& board, string& word, set<pair<int, int>>& state, pair<int, int>& boardCoordenates, int wordIndex){
+        cout << includesMove(state, boardCoordenates);
 
 
         return false;
@@ -15,7 +16,7 @@ public:
                 if (board[i][j] == word.front()){
                     set<pair<int, int>> state;
                     state.insert({i, j});
-                    solveWord(board, word, state, 1);
+                    solveWord(board, word, state, {i,j},  1);
                 }
             }
         }
