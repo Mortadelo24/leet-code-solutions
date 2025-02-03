@@ -5,7 +5,7 @@ public:
         int index = 0;
         while(index < nums.size()){
             if (nums[index] == previous){
-                nums.erase(nums.begin() + i);
+                nums.erase(nums.begin() + index);
                 index--;
             }
             previous = nums[index];
