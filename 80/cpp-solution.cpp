@@ -5,11 +5,7 @@ public:
         
         int last = 1;
         for(int i = 2; i < nums.size(); i++){
-            if(nums[last-1]!=nums[i])
-            {
-                nums[++last]=nums[i];
-            }
-            
+            if(nums[last-1]!=nums[i]) nums[++last]=nums[i];
         }
 
 
