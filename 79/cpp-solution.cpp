@@ -3,8 +3,7 @@ public:
     bool includesMove(set<pair<int, int>>& state, pair<int, int> move){
         return state.find(move) != state.end();        
     }
-    bool solveWord(vector<vector<char>>& board, string& word, set<pair<int, int>>& state, pair<int, int> boardCoordenates, int wordIndex){    
-        cout << wordIndex << "|" << state.size() << endl;
+    bool solveWord(vector<vector<char>>& board, string& word, set<pair<int, int>>& state, pair<int, int> boardCoordenates){    
         if (word.size() == state.size()) {
             return true;
         }
@@ -33,9 +32,9 @@ public:
 
         for (pair<int, int> tempMove : unCheckedPaths ){
            
-            if (!includesMove(state, tempMove) && board[tempMove.first][tempMove.second] == word[wordIndex]) {
+            if (!includesMove(state, tempMove) && board[tempMove.first][tempMove.second] == word[state.size()]) {
                 state.insert(tempMove);
-                if(solveWord(board, word, state, tempMove, wordIndex + 1)) return true;
+                if(solveWord(board, word, state, tempMove)) return true;
                 state.erase(tempMove);
             }
         }
@@ -49,7 +48,7 @@ public:
             for (int j = 0; j < board.front().size(); j++){
                 if (board[i][j] == word.front()){
                     state.insert({i,j});
-                    if (solveWord(board, word, state, {i,j},  1)) return true;
+                    if (solveWord(board, word, state, {i,j})) return true;
                     state.erase({i,j});
                 }
             }
