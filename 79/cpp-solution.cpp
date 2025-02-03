@@ -9,7 +9,7 @@ public:
         }
         set<pair<int, int>> unCheckedPaths;
         pair<int, int> newPath;
-        pari<int, int> boardCoordenates = state.back();
+        pair<int, int> boardCoordenates = state.back();
         if (boardCoordenates.first > 0){
             newPath = boardCoordenates;
             newPath.first--;
