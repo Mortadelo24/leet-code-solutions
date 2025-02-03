@@ -45,6 +45,7 @@ public:
         if (word.size() > board.size() * board.front().size()) return false;
         vector<pair<int, int>> state;
         unordered_map<char, int> characters; 
+        stack<pair<int, int> startStateCandidates;
 
         for (char a : word){
             characters[a]--;
@@ -56,11 +57,13 @@ public:
                 if (characters.find(board[i][j]) != characters.end()){
                     characters[board[i][j]]++;
                     if (characters[board[i][j]] == 0) correctCharsCounter++;
+                    if (board[i][j] == word.front()) startStateCandidates.push({i,j});
                 }
             }
         }
-        cout << correctCharsCounter << "|" <<characters.size() << endl;
-        // if (board[i][j] == word.front()){
+        if (correctCharsCounter != characters.size()) return false;
+        
+        // if (){
         //             state.push_back({i,j});
         //             if (solveWord(board, word, state)) return true;
         //             state.pop_back();
