@@ -7,18 +7,20 @@ public:
         if (word.size() == state.size()) {
             cout << "anAnswer" << endl;
         }
-        for (int i = boardCoordenates.first == 0 ? 0 : boardCoordenates.first  - 1; i <= boardCoordenates.first + 1 && i < board.size(); i++ ){
-            for (int j = boardCoordenates.second == 0 ? 0 : boardCoordenates.second  - 1; j <= boardCoordenates.second + 1 && j < board.front().size(); j++){
-                pair<int, int> tempMove = {i,j};
-                if (tempMove == boardCoordenates) continue;
-                if (!includesMove(state, tempMove) && board[i][j] == word[wordIndex]) {
-                    state.insert(tempMove);
-                    solveWord(board, word, state, tempMove, wordIndex + 1);
-                    state.erase(tempMove);
+        set<pair<int, int>> unCheckedPaths;
+        
 
-                }
+      
+        for (pair<int, int> tempMove : unCheckedPaths ){
+            cout << tempMove.first << "|" << tempMove.second << endl;
+            continue;
+            if (!includesMove(state, tempMove) && board[i][j] == word[wordIndex]) {
+                state.insert(tempMove);
+                solveWord(board, word, state, tempMove, wordIndex + 1);
+                state.erase(tempMove);
             }
         }
+            
 
 
         return false;
