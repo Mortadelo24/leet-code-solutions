@@ -12,7 +12,7 @@ public:
                 if (tempMove == boardCoordenates) continue;
                 if (!includesMove(state, tempMove) && board[i][j] == word[wordIndex]) {
                     state.insert(tempMove);
-                    state.remove(tempMove);
+                    state.erase(tempMove);
                 }
             }
         }
