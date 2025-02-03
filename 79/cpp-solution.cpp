@@ -14,7 +14,7 @@ public:
         for (pair<int, int> tempMove : unCheckedPaths ){
             cout << tempMove.first << "|" << tempMove.second << endl;
             continue;
-            if (!includesMove(state, tempMove) && board[i][j] == word[wordIndex]) {
+            if (!includesMove(state, tempMove) && board[tempMove.first][tempMove.second] == word[wordIndex]) {
                 state.insert(tempMove);
                 solveWord(board, word, state, tempMove, wordIndex + 1);
                 state.erase(tempMove);
