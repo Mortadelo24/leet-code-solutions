@@ -23,6 +23,7 @@ public:
     }
     bool exist(vector<vector<char>>& board, string word) {
         set<pair<int, int>> state;
+        cout <<"wordsize: " <<  word.size() << endl;
 
         for (int i = 0; i < board.size(); i++){
             for (int j = 0; j < board.front().size(); j++){
