@@ -11,6 +11,10 @@ public:
             }
             nums.erase(nums.begin() + i);
         }
+
+        for (int a : nums){
+            cout << a << endl;
+        }
         return uniqueElements;
     }
 };
