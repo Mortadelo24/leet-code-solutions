@@ -8,7 +8,7 @@ public:
         int offSetX = 0;
         int offSetY = 0;
         for (int i = offSetX; i < offSetX + 3; i++ ){
-            for (int j = offsetY; j < offSetY + 3; j++){
+            for (int j = offSetY; j < offSetY + 3; j++){
                 cout << board[i][j] << endl;
             }
         }
