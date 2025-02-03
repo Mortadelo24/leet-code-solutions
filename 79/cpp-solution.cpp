@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool includesMove(set<pair<int, int>>& state, pair<int, int> move){
+    bool includesMove(stack<pair<int, int>>& state, pair<int, int> move){
         return find(state.begin(), state.end(), move) != state.end();        
     }
     bool solveWord(vector<vector<char>>& board, string& word, stack<pair<int, int>>& state, pair<int, int> boardCoordenates){    
