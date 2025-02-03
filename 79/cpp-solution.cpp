@@ -50,17 +50,16 @@ public:
             characters[a]--;
         }
       
-
+        int correctCharsCounter = 0;
         for (int i = 0; i < board.size(); i++){
             for (int j = 0; j < board.front().size(); j++){
                 if (characters.find(board[i][j]) != characters.end()){
                     characters[board[i][j]]++;
+                    if (characters[board[i][j]] == 0) correctCharsCounter++;
                 }
             }
         }
-        for (pair<char, int> c : characters){
-           cout << c.second << endl;
-        }
+        cout << correctCharsCounter << "|" <<characters.size() << endl;
         // if (board[i][j] == word.front()){
         //             state.push_back({i,j});
         //             if (solveWord(board, word, state)) return true;
