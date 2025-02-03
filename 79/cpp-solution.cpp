@@ -27,10 +27,11 @@ public:
                     set<pair<int, int>> state;
                     state.insert({i,j});
                     solveWord(board, word, state, {i,j},  1);
-                    state.remove({i,j});
+                    state.erase({i,j});
                 }
             }
         }
+        cout << state.size() << endl;
 
         return false;
     }
