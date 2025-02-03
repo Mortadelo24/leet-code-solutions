@@ -19,9 +19,14 @@ public:
             newPath.second--;
             unCheckedPaths.insert(newPath);
         }
-         if (boardCoordenates.first < board.size() - 1){
+        if (boardCoordenates.first < board.size() - 1){
             newPath = boardCoordenates;
             newPath.first++;
+            unCheckedPaths.insert(newPath);
+        }
+        if (boardCoordenates.second < board.front().size() - 1){
+            newPath = boardCoordenates;
+            newPath.second++;
             unCheckedPaths.insert(newPath);
         }
 
