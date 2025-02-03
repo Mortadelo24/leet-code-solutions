@@ -15,8 +15,9 @@ public:
             for (int j = 0; j < board.front().size(); j++){
                 if (board[i][j] == word.front()){
                     set<pair<int, int>> state;
-                    state.insert({i, j});
-                    solveWord(board, word, state, {i,j},  1);
+                    pair<int, int> coordenates = {i,j};
+                    state.insert(coordenates);
+                    solveWord(board, word, state, coordenates,  1);
                 }
             }
         }
