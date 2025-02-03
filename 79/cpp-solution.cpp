@@ -47,14 +47,14 @@ public:
         unordered_map<char, int> characters; 
 
         for (char a : word){
-            characters[a] += 1;
+            characters[a]--;
         }
       
 
         for (int i = 0; i < board.size(); i++){
             for (int j = 0; j < board.front().size(); j++){
                 if (characters.find(board[i][j]) != characters.end()){
-                    characters[j]--;
+                    characters[j]++;
                 }
             }
         }
