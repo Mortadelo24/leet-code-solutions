@@ -9,7 +9,11 @@ public:
         }
         set<pair<int, int>> unCheckedPaths;
         
-
+        if (boardCoordenates.first > 0){
+            pair<int, int> newPath = boardCoordenates;
+            newPath.first--;
+            unCheckedpaths.insert(newPath);
+        }
       
         for (pair<int, int> tempMove : unCheckedPaths ){
             cout << tempMove.first << "|" << tempMove.second << endl;
