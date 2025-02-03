@@ -3,9 +3,9 @@ public:
     bool includesMove(set<pair<int, int>>& state, pair<int, int> move){
         return state.find(move) != state.end();        
     }
-    bool solveWord(vector<vector<char>>& board, string& word, set<pair<int, int>>& state, pair<int, int> boardCoordenates, int wordIndex){    
+    bool solveWord(vector<vector<char>>& board, string& word, set<pair<int, int>>& state, pair<int, int> boardCoordenates, int wordIndex){   
         if (word.size() == state.size()) {
-            cout << "anAnswer" << endl;
+            return true;
         }
         set<pair<int, int>> unCheckedPaths;
         pair<int, int> newPath;
