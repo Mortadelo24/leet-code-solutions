@@ -4,8 +4,10 @@ public:
         bool isSecond = false;
         int last = 0;
         for(int i = 1; i < nums.size(); i++){
-            if (nums[i] == nums[last])continue;
-            nums[++last] = nums[i];
+         
+            if (nums[last] != nums[i]){
+                nums[++last] = nums[i];
+            }
         }
 
 
