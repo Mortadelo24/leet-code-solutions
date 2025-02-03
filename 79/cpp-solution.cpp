@@ -8,13 +8,19 @@ public:
             cout << "anAnswer" << endl;
         }
         set<pair<int, int>> unCheckedPaths;
-        
+        pair<int, int> newPath;
         if (boardCoordenates.first > 0){
-            pair<int, int> newPath = boardCoordenates;
+            newPath = boardCoordenates;
             newPath.first--;
             unCheckedPaths.insert(newPath);
         }
-      
+        if (boardCoordenates.second > 0){
+            newPath = boardCoordenates;
+            newPath.second--;
+            unCheckedPaths.insert(newPath);
+        }
+
+        cout << "Moves" << endl;
         for (pair<int, int> tempMove : unCheckedPaths ){
             cout << tempMove.first << "|" << tempMove.second << endl;
             continue;
