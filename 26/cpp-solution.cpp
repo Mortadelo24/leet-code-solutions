@@ -10,7 +10,7 @@ public:
             }
             previous = nums[index];
         }
-        while ()
+
         for (int i : nums){
             cout << i << endl;
         }
