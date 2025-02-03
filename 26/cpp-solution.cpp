@@ -5,7 +5,7 @@ public:
         int lastUnique = 0;
         while(index < nums.size()){
             if (index > 0 && nums[index] == lastUnique){
-                nums[lastUnique] = nums[index];
+                nums[lastUnique + 1] = nums[index];
                 lastUnique++;
             }
             index++;
