@@ -11,6 +11,6 @@ public:
         for (int a : nums){
             cout << a << endl;
         }
-        return uniqueElements;
+        return 0;
     }
 };
