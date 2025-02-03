@@ -7,7 +7,7 @@ public:
                 nums.erase(nums.begin() + index);
                 index--;
             }
-            cout << "a" << endl;
+            index++;
         }
 
         for (int i : nums){
