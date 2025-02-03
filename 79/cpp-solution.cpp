@@ -34,7 +34,7 @@ public:
             if (!includesMove(state, tempMove) && board[tempMove.first][tempMove.second] == word[state.size()]) {
                 state.push_back(tempMove);
                 if(solveWord(board, word, state, tempMove)) return true;
-                state.pop_back(tempMove);
+                state.pop_back();
             }
         }
             
@@ -48,7 +48,7 @@ public:
                 if (board[i][j] == word.front()){
                     state.push_back({i,j});
                     if (solveWord(board, word, state, {i,j})) return true;
-                    state.pop_back({i,j});
+                    state.pop_back();
                 }
             }
         }
