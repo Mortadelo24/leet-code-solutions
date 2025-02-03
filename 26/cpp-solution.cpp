@@ -1,14 +1,12 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        int previous = nums.front();
         int index = 0;
         while(index < nums.size()){
-            if (nums[index] == previous){
+            if (index>0 && nums[index] == nums[index - 1]){
                 nums.erase(nums.begin() + index);
                 index--;
             }
-            previous = nums[index];
         }
 
         for (int i : nums){
