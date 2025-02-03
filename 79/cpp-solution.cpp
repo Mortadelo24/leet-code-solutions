@@ -39,9 +39,7 @@ public:
             }
         }
             
-
-
-        return false;
+        return true;
     }
     bool exist(vector<vector<char>>& board, string word) {
         set<pair<int, int>> state;
@@ -50,7 +48,7 @@ public:
             for (int j = 0; j < board.front().size(); j++){
                 if (board[i][j] == word.front()){
                     state.insert({i,j});
-                    solveWord(board, word, state, {i,j},  1);
+                    if (solveWord(board, word, state, {i,j},  1)) return true;
                     state.erase({i,j});
                 }
             }
