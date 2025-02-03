@@ -2,13 +2,9 @@ class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
         int currentNum = nums.front();
-        int uniqueElements = 1;
+        int previous = 1;
         for(int i = 1; i < nums.size(); i++){
-            if (nums[i] != currentNum){
-                currentNum = nums[i];
-                uniqueElements++;
-                continue;
-            }
+            previous = nums[i]
             nums.erase(nums.begin() + i);
         }
 
