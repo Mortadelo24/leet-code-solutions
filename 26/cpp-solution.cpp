@@ -10,10 +10,6 @@ public:
             index++;
         }
 
-        for (int i : nums){
-            cout << i << endl;
-        }
-
         return nums.size();
     }
 };
