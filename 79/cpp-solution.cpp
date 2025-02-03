@@ -34,7 +34,7 @@ public:
         for (pair<int, int> tempMove : unCheckedPaths ){
             if (!includesMove(state, tempMove) && board[tempMove.first][tempMove.second] == word[state.size()]) {
                 state.push_back(tempMove);
-                if(solveWord(board, word, state, tempMove)) return true;
+                if(solveWord(board, word, state)) return true;
                 state.pop_back();
             }
         }
