@@ -8,7 +8,6 @@ public:
        
         for (int i = boardCoordenates.first - 1; i < boardCoordenates.first + 1; i++ ){
             for (int j = boardCoordenates.second - 1; j < boardCoordenates.second + 1; j++){
-                cout << board[i][j] << " ";
             }
             cout << endl;
         }
