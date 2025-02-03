@@ -34,12 +34,12 @@ public:
            
             if (!includesMove(state, tempMove) && board[tempMove.first][tempMove.second] == word[wordIndex]) {
                 state.insert(tempMove);
-                solveWord(board, word, state, tempMove, wordIndex + 1);
+                if(solveWord(board, word, state, tempMove, wordIndex + 1)) return true;
                 state.erase(tempMove);
             }
         }
             
-        return true;
+        return false;
     }
     bool exist(vector<vector<char>>& board, string word) {
         set<pair<int, int>> state;
