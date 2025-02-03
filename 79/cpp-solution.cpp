@@ -1,3 +1,4 @@
+// this is a bad aproach but i will let it this way because i know the solution only because i read it from another person and i do not want to copy it exactly the same.
 class Solution {
 public:
     bool includesMove(vector<pair<int, int>>& state, pair<int, int> move){
