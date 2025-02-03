@@ -45,7 +45,7 @@ public:
         if (word.size() > board.size() * board.front().size()) return false;
         vector<pair<int, int>> state;
         unordered_map<char, int> characters; 
-        stack<pair<int, int> startStateCandidates;
+        stack<pair<int, int>> startStateCandidates;
 
         for (char a : word){
             characters[a]--;
