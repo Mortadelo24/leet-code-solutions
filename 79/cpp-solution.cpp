@@ -23,7 +23,7 @@ public:
                 if (board[i][j] == word.front()){
                     set<pair<int, int>> state;
                     state.insert({i,j});
-                    solveWord(board, word, state, {2,3},  1);
+                    solveWord(board, word, state, {i,j},  1);
                 }
             }
         }
