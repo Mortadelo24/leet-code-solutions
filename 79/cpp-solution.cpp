@@ -44,13 +44,25 @@ public:
     bool exist(vector<vector<char>>& board, string word) {
         if (word.size() > board.size() * board.front().size()) return false;
         vector<pair<int, int>> state;
+        unordered_map<char, int> characters; 
+
+        for (char a : word){
+            characters[a] += 1;
+        }
+        for (pair<char, int> c : characters){
+            cout << c.second << endl;
+        }
 
         for (int i = 0; i < board.size(); i++){
             for (int j = 0; j < board.front().size(); j++){
                 
             }
         }
-        
+        // if (board[i][j] == word.front()){
+        //             state.push_back({i,j});
+        //             if (solveWord(board, word, state)) return true;
+        //             state.pop_back();
+        //         }
 
         return false;
     }
