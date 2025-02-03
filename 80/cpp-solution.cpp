@@ -14,6 +14,6 @@ public:
         }
 
 
-        return last;
+        return last + 1;
     }
 };
