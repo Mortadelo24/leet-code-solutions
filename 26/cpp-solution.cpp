@@ -11,6 +11,6 @@ public:
             index++;
         }
 
-        return nums.size();
+        return lastUnique + 1;
     }
 };
