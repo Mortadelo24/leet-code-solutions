@@ -9,8 +9,9 @@ public:
         int offSetY = 0;
         for (int i = offSetX; i < offSetX + 3; i++ ){
             for (int j = offSetY; j < offSetY + 3; j++){
-                cout << board[i][j] << endl;
+                cout << board[i][j] << " ";
             }
+            cout << endl;
         }
 
         return false;
