@@ -5,7 +5,13 @@ public:
     }
     bool solveWord(vector<vector<char>>& board, string& word, set<pair<int, int>>& state, pair<int, int> boardCoordenates, int wordIndex){
         cout << includesMove(state, boardCoordenates) << endl;
-
+        int offSetX = 0;
+        int offSetY = 0;
+        for (int i = offSetX; i < offSetX + 3; i++ ){
+            for (int j = offsetY; j < offSetY + 3; j++){
+                cout << board[i][j] << endl;
+            }
+        }
 
         return false;
     }
