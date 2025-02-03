@@ -1,9 +1,9 @@
 class Solution {
 public:
-    bool includesMove(stack<pair<int, int>>& state, pair<int, int> move){
+    bool includesMove(vector<pair<int, int>>& state, pair<int, int> move){
         return find(state.begin(), state.end(), move) != state.end();        
     }
-    bool solveWord(vector<vector<char>>& board, string& word, stack<pair<int, int>>& state, pair<int, int> boardCoordenates){    
+    bool solveWord(vector<vector<char>>& board, string& word, vector<pair<int, int>>& state, pair<int, int> boardCoordenates){    
         if (word.size() == state.size()) {
             return true;
         }
@@ -32,23 +32,23 @@ public:
 
         for (pair<int, int> tempMove : unCheckedPaths ){
             if (!includesMove(state, tempMove) && board[tempMove.first][tempMove.second] == word[state.size()]) {
-                state.push(tempMove);
+                state.push_back(tempMove);
                 if(solveWord(board, word, state, tempMove)) return true;
-                state.pop(tempMove);
+                state.pop_back(tempMove);
             }
         }
             
         return false;
     }
     bool exist(vector<vector<char>>& board, string word) {
-        stack<pair<int, int>> state;
+        vector<pair<int, int>> state;
 
         for (int i = 0; i < board.size(); i++){
             for (int j = 0; j < board.front().size(); j++){
                 if (board[i][j] == word.front()){
-                    state.push({i,j});
+                    state.push_back({i,j});
                     if (solveWord(board, word, state, {i,j})) return true;
-                    state.pop({i,j});
+                    state.pop_back({i,j});
                 }
             }
         }
