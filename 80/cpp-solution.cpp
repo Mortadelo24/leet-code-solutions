@@ -14,7 +14,6 @@ public:
         }
 
 
-        cout << last << endl;
-        return nums.size();
+        return last;
     }
 };
