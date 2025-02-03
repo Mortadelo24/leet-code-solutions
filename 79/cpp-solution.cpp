@@ -3,12 +3,13 @@ public:
     bool includesMove(vector<pair<int, int>>& state, pair<int, int> move){
         return find(state.begin(), state.end(), move) != state.end();        
     }
-    bool solveWord(vector<vector<char>>& board, string& word, vector<pair<int, int>>& state, pair<int, int> boardCoordenates){    
+    bool solveWord(vector<vector<char>>& board, string& word, vector<pair<int, int>>& state){    
         if (word.size() == state.size()) {
             return true;
         }
         set<pair<int, int>> unCheckedPaths;
         pair<int, int> newPath;
+        pari<int, int> boardCoordenates = state.back();
         if (boardCoordenates.first > 0){
             newPath = boardCoordenates;
             newPath.first--;
@@ -47,7 +48,7 @@ public:
             for (int j = 0; j < board.front().size(); j++){
                 if (board[i][j] == word.front()){
                     state.push_back({i,j});
-                    if (solveWord(board, word, state, {i,j})) return true;
+                    if (solveWord(board, word, state)) return true;
                     state.pop_back();
                 }
             }
