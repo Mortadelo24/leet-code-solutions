@@ -4,7 +4,7 @@ public:
         return state.find(move) != state.end();        
     }
     bool solveWord(vector<vector<char>>& board, string& word, set<pair<int, int>>& state, pair<int, int> boardCoordenates, int wordIndex){    
-        cout << wordIndex << endl;   
+        cout << boardCoordenates.size() << endl;   
         for (int i = boardCoordenates.first == 0 ? 0 : boardCoordenates.first  - 1; i <= boardCoordenates.first + 1 && i < board.size(); i++ ){
             for (int j = boardCoordenates.second == 0 ? 0 : boardCoordenates.second  - 1; j <= boardCoordenates.second + 1 && j < board.front().size(); j++){
                 pair<int, int> tempMove = {i,j};
