@@ -63,11 +63,15 @@ public:
         }
         if (correctCharsCounter != characters.size()) return false;
         
-        // if (){
-        //             state.push_back({i,j});
-        //             if (solveWord(board, word, state)) return true;
-        //             state.pop_back();
-        //         }
+       
+       
+        while(!startStateCandidates.empty()){
+            state.push_back(startStateCandidates.top());
+            if (solveWord(board, word, state)) return true;
+            state.pop_back();
+
+            startStateCandidates.pop();
+        }
 
         return false;
     }
