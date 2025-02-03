@@ -7,7 +7,7 @@ public:
         cout << includesMove(state, boardCoordenates) << endl;
        
         for (int i = boardCoordenates.first - 1; i < boardCoordenates.first + 1 && i < board.size(); i++ ){
-            for (int j = boardCoordenates.second - 1; j < boardCoordenates.second + 1 && i < board.first().size(); j++){
+            for (int j = boardCoordenates.second - 1; j < boardCoordenates.second + 1 && i < board.front().size(); j++){
                 cout << i << "|" << j << endl;
                 // cout << board[i][j] << " ";
             }
