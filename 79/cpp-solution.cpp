@@ -12,8 +12,8 @@ public:
                 if (tempMove == boardCoordenates) continue;
                 if (!includesMove(state, tempMove) && board[i][j] == word[wordIndex]) {
                     state.insert(tempMove);
+                    solveWord(board, word, state, tempMove, wordIndex + 1);
                     state.erase(tempMove);
-        cout << "size" <<  state.size() << endl;
 
                 }
             }
@@ -31,8 +31,6 @@ public:
                     state.insert({i,j});
                     solveWord(board, word, state, {i,j},  1);
                     state.erase({i,j});
-        cout << "size" <<  state.size() << endl;
-
                 }
             }
         }
