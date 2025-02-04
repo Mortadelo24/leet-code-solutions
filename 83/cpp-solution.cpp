@@ -16,13 +16,12 @@ public:
 
         while (currentNode != nullptr){
             if (currentNode->val != tailNode->val){
-                cout << currentNode->val << endl;
                 tailNode->next = currentNode;
                 tailNode = currentNode;
             }
             currentNode = currentNode->next;
         }
-        cout << tailNode->val << endl;
+        tailNode->next = nullptr;
 
         return head;
     }
