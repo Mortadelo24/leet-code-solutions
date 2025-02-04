@@ -22,6 +22,7 @@ public:
             }
             currentNode = currentNode->next;
         }
+        cout << tailNode->val << endl;
 
         return head;
     }
