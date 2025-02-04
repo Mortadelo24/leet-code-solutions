@@ -4,6 +4,10 @@ public:
         if (left > right) return false;
         int mid = floor((left + right) / 2);
 
+        if ((nums[mid] < nums[left] && nums[mid] < nums[right]) || (nums[mid] > nums[left] && nums[mid] > nums[right])){
+            return binarySearch(nums, target, mid, right) || binarySearch(nums, target, left, mid);
+        }
+
         if (nums[mid] < target){
             return binarySearch(nums, target, mid + 1, right);
         }else if (nums[mid] > target){
