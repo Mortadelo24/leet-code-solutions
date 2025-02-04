@@ -22,6 +22,7 @@ public:
                 previousTailNode = tailNode;
                 tailNode = currentNode;
             }else {
+                cout << "äre equals" << endl;
                 tailNode = previousTailNode;
             }
             currentNode = currentNode->next;
