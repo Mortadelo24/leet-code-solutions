@@ -13,12 +13,16 @@ public:
     ListNode* deleteDuplicates(ListNode* head) {
         if (head == nullptr) return nullptr;
         ListNode* tailNode = head;  
+        ListNode* previousTailNode = head;
         ListNode* currentNode = head->next;  
 
         while (currentNode != nullptr){
-            if (currentNode->val != tailNode->val && (currentNode->next == nullptr || currentNode->next->val != currentNode->val)){
+            if (currentNode->val != tailNode->val){
                 tailNode->next = currentNode;
+                previousTailNode = tailNode;
                 tailNode = currentNode;
+            }else {
+                tailNode = previousTailNode;
             }
             currentNode = currentNode->next;
         }
