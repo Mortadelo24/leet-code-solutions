@@ -13,17 +13,12 @@ public:
     ListNode* deleteDuplicates(ListNode* head) {
         if (head == nullptr) return nullptr;
         ListNode* tailNode = head;  
-        ListNode* previousTailNode = head;
         ListNode* currentNode = head->next;  
 
         while (currentNode != nullptr){
             if (currentNode->val != tailNode->val){
                 tailNode->next = currentNode;
-                previousTailNode = tailNode;
                 tailNode = currentNode;
-            }else {
-                cout << "äre equals" << endl;
-                tailNode = previousTailNode;
             }
             currentNode = currentNode->next;
         }
