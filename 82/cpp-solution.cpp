@@ -38,7 +38,8 @@ public:
             }
             currentNode = currentNode->next;
         }
-        
+        tailNode->next = nullptr;
+
         return head;
     }
 };
