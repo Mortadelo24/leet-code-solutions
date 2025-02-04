@@ -15,6 +15,10 @@ public:
         ListNode* currentNode = head->next;  
 
         while (currentNode != nullptr){
+            if (currentNode->val != tailNode->val){
+                tailNode->next = currentNode;
+                tailNode = currentNode;
+            }
             currentNode = currentNode->next;
         }
 
