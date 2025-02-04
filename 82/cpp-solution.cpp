@@ -24,13 +24,16 @@ public:
                     counter++;
                     subNode = subNode->next;
                 }
+                if (counter > 1) {
+                    currentNode = subNode;
+                    continue;
+                }
                 cout << currentNode->val << " : " <<  counter << endl;
 
                 if (tailNode != nullptr) tailNode->next = currentNode;
                 tailNode = currentNode;
 
-                currentNode = subNode;
-
+                
             }
             currentNode = currentNode->next;
         }
