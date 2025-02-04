@@ -5,6 +5,7 @@ public:
         int mid = floor((left + right) / 2);
 
         if ((nums[mid] < nums[left] && nums[mid] < nums[right]) || (nums[mid] > nums[left] && nums[mid] > nums[right])){
+            cout << "special case"<< endl;
             return binarySearch(nums, target, mid, right) || binarySearch(nums, target, left, mid);
         }
 
