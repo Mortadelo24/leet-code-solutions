@@ -16,6 +16,7 @@ public:
 
         while (currentNode != nullptr){
             if (currentNode->val != tailNode->val){
+                cout << val << endl;
                 tailNode->next = currentNode;
                 tailNode = currentNode;
             }
