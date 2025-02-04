@@ -17,7 +17,7 @@ public:
 
 
         while (currentNode != nullptr){
-            if (currentNode->val != tailNode->val){
+            if (tailNode == nullptr || currentNode->val != tailNode->val){
                 int counter = 0;
                 ListNode* subNode = currentNode;
                 while(subNode != nullptr && subNode->val == currentNode->val ){
