@@ -8,7 +8,7 @@ public:
 
         if ((nums[mid] < nums[left] && nums[mid] < nums[right]) || (nums[mid] > nums[left] && nums[mid] > nums[right])){
             cout << "special case"<< endl;
-            return binarySearch(nums, target, mid, right) || binarySearch(nums, target, left, mid);
+            return binarySearch(nums, target, mid + 1, right) || binarySearch(nums, target, left, mid - 1);
         }
 
         if (nums[mid] < target){
