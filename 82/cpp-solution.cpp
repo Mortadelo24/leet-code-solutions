@@ -24,7 +24,8 @@ public:
                     counter++;
                     subNode = subNode->next;
                 }
-                cout << counter << endl;
+                cout << currentNode->val << " : " <<  counter << endl;
+
                 tailNode->next = currentNode;
                 tailNode = currentNode;
             }
