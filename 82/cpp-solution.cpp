@@ -28,7 +28,6 @@ public:
                     currentNode = subNode;
                     continue;
                 }
-                cout << currentNode->val << " : " <<  counter << endl;
                 
                 if (tailNode == nullptr){
                     head = currentNode;
@@ -36,8 +35,6 @@ public:
                     tailNode->next = currentNode;
                 }
                 tailNode = currentNode;
-
-                
             }
             currentNode = currentNode->next;
         }
