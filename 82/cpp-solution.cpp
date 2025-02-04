@@ -31,7 +31,7 @@ public:
                 cout << currentNode->val << " : " <<  counter << endl;
                 
                 if (tailNode == nullptr){
-                    head = tailNode;
+                    head = currentNode;
                 }else {
                     tailNode->next = currentNode;
                 }
