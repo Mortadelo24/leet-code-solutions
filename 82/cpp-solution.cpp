@@ -16,7 +16,7 @@ public:
         ListNode* currentNode = head->next;  
 
         while (currentNode != nullptr){
-            if (currentNode->val != tailNode->val){
+            if (currentNode->val != tailNode->val && (currentNode->val != currentNode->next->val || currentNode->next == nullptr) ){
                 tailNode->next = currentNode;
                 tailNode = currentNode;
             }
