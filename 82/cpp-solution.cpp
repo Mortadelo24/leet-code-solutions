@@ -38,6 +38,7 @@ public:
             }
             currentNode = currentNode->next;
         }
+        if (tailNode == nullptr) return tailNode;
         tailNode->next = nullptr;
 
         return head;
