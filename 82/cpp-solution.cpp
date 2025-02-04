@@ -29,8 +29,12 @@ public:
                     continue;
                 }
                 cout << currentNode->val << " : " <<  counter << endl;
-
-                if (tailNode != nullptr) tailNode->next = currentNode;
+                
+                if (tailNode == nullptr){
+                    head = tailNode;
+                }else {
+                    tailNode->next = currentNode;
+                }
                 tailNode = currentNode;
 
                 
