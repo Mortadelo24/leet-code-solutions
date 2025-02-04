@@ -29,11 +29,8 @@ public:
                     continue;
                 }
                 
-                if (tailNode == nullptr){
-                    head = currentNode;
-                }else {
-                    tailNode->next = currentNode;
-                }
+                if (tailNode == nullptr) head = currentNode; else tailNode->next = currentNode;
+                
                 tailNode = currentNode;
             }
             currentNode = currentNode->next;
