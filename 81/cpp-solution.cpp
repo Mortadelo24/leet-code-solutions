@@ -6,7 +6,7 @@ public:
 
         if (nums[mid] == target) return true;
 
-        if ((nums[mid] < nums[left] && nums[mid] < nums[right]) || (nums[mid] > nums[left] && nums[mid] > nums[right])){
+        if ((nums[mid] <= nums[left] && nums[mid] <= nums[right]) || (nums[mid] >= nums[left] && nums[mid] >= nums[right])){
             cout << "special case"<< endl;
             return binarySearch(nums, target, mid + 1, right) || binarySearch(nums, target, left, mid - 1);
         }
