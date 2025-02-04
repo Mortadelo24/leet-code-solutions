@@ -25,6 +25,7 @@ public:
                     subNode = subNode->next;
                 }
                 cout << currentNode->val << " : " <<  counter << endl;
+                currentNode = subNode;
 
                 if (tailNode != nullptr) tailNode->next = currentNode;
                 tailNode = currentNode;
