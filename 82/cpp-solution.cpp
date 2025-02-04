@@ -15,8 +15,16 @@ public:
         ListNode* tailNode = head;  
         ListNode* currentNode = head->next;  
 
-        while (currentNode->next != nullptr){
-            if (currentNode->val != tailNode->val && currentNode->val != currentNode->next->val ){
+
+        while (currentNode != nullptr){
+            if (currentNode->val != tailNode->val){
+                int counter = 0;
+                ListNode* subNode = currentNode;
+                while(subNode != nullptr && subNode->val == currentNode->val ){
+                    counter++;
+                    subNode = subNode->next;
+                }
+                cout << counter << endl;
                 tailNode->next = currentNode;
                 tailNode = currentNode;
             }
