@@ -19,7 +19,7 @@ public:
             // int distanceLeft = candidates[j] - (j == 0 ? 0 : candidates[j-1] + 1); 
             int distanceLeft = i  -  (results.empty() ? 0 : candidates.back() + 1);
             cout << "leftSide: " << heights[i] * ( distanceLeft ) << endl;
-            results.push_back(0);
+            results.push_back(heights[i] * ( distanceLeft ) );
             candidates.push_back(i);
 
             // end
