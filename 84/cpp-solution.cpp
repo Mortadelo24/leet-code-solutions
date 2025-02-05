@@ -13,8 +13,11 @@ public:
             while(!candidates.empty() && heights[candidates.back()] > heights[i]) candidates.pop_back();
             candidates.push_back(i);
             // end
-
             printStack(candidates, heights);
+
+            int base = heights[candidate.front()];
+            int distance = candate.front() - 0;
+            cout << base + (distance * base) << endl;
 
         }
         return 0;
