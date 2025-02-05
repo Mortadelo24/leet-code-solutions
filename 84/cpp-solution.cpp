@@ -18,8 +18,10 @@ public:
 
             for (int j = 0; j < candidates.size(); j++){
                 int base = heights[candidates[j]];
-                int distance = candidates.back() - candidates[j];
-                int area = base + (distance * base);
+                int distanceRight = candidates.back() - candidates[j];
+                int distanceLeft = candidates[j] - (j == 0 ? 0 : andidates[j-1]);
+                distanceLeft--;
+                int area = base + (distanceRight * base) + (distanceLeft * base);
                 answer = max(answer, area);
 
             }
