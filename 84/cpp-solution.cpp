@@ -16,15 +16,16 @@ public:
                 candidates.pop_back();
                 results.pop_back();
             }
+                    // int distanceLeft = candidates[j] - (j == 0 ? 0 : candidates[j-1] + 1); 
+            results.push_back(heights[i] * ( i  -  (results.empty() ? 0 : candidates.back() + 1 ));
             candidates.push_back(i);
-            results.push_back(0);
+
             // end
             printStack(candidates, heights);
 
             for (int j = 0; j < candidates.size(); j++){
                 int base = heights[candidates[j]];
                 results[j] += base;
-                    // int distanceLeft = candidates[j] - (j == 0 ? 0 : candidates[j-1] + 1); 
                 cout << results[j] << endl;
                 answer = max(answer, results[j]);
 
