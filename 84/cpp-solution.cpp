@@ -17,7 +17,7 @@ public:
                 results.pop_back();
             }
             candidates.push_back(i);
-            results.pop_back(0);
+            results.push_back(0);
             // end
             printStack(candidates, heights);
 
