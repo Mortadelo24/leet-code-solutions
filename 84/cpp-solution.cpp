@@ -21,7 +21,7 @@ public:
             candidates.push_back(i);
             // end 
 
-            // printStack(candidates, heights);
+            printStack(candidates, heights);
             //  there is a problem with the optimization of this part of the code but i will not touch it
             for (int j = 0; j < candidates.size(); j++){
                 results[j] += heights[candidates[j]];
