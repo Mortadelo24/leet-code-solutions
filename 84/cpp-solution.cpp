@@ -15,7 +15,7 @@ public:
             if (!candidates.empty() && heights[candidates.back()] == heights[i]) continue;
             candidates.push_back(i);
             // end
-            // printStack(candidates, heights);
+            printStack(candidates, heights);
 
             for (int j = 0; j < candidates.size(); j++){
                 int base = heights[candidates[j]];
