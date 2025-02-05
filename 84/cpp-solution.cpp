@@ -5,6 +5,7 @@ public:
             cout << candidates.top() << ",";
             candidates.pop();
         }
+        cout << endl;
     }
     int largestRectangleArea(vector<int>& heights) {
         stack<int> candidates;
@@ -13,7 +14,7 @@ public:
             while(!candidates.empty() && heights[candidates.top()] > heights[i]) candidates.pop();
             candidates.push(i);
             // end
-            
+
             printStack(candidates);
 
         }
