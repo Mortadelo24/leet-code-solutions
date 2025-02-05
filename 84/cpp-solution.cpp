@@ -2,7 +2,7 @@ class Solution {
 public:
     void printStack(stack<int> candidates){
         while(!candidates.empty()){
-            cout << candidates.top() << ", ";
+            cout << candidates.top() << ",";
             candidates.pop();
         }
     }
