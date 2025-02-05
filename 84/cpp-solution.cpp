@@ -20,12 +20,11 @@ public:
             results.push_back(heights[i] * ( distanceLeft ) );
             candidates.push_back(i);
             // end 
-            
+
             // printStack(candidates, heights);
 
             for (int j = 0; j < candidates.size(); j++){
-                int base = heights[candidates[j]];
-                results[j] += base;
+                results[j] += heights[candidates[j]];
                 answer = max(answer, results[j]);
             }
         }
