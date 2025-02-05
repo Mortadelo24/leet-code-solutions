@@ -25,7 +25,7 @@ public:
                 int base = heights[candidates[j]];
                 results[j] += base;
                     // int distanceLeft = candidates[j] - (j == 0 ? 0 : candidates[j-1] + 1); 
-
+                cout << results[j] << endl;
                 answer = max(answer, results[j]);
 
             }
