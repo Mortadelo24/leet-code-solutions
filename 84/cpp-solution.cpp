@@ -19,18 +19,15 @@ public:
             int distanceLeft = i  -  (results.empty() ? 0 : candidates.back() + 1);
             results.push_back(heights[i] * ( distanceLeft ) );
             candidates.push_back(i);
-            // end
+            // end 
+            
             // printStack(candidates, heights);
 
             for (int j = 0; j < candidates.size(); j++){
                 int base = heights[candidates[j]];
                 results[j] += base;
-                cout << results[j] << endl;
                 answer = max(answer, results[j]);
-
             }
-            
-
         }
         return answer;
     }
