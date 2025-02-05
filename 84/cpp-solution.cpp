@@ -19,8 +19,7 @@ public:
             for (int j = 0; j < candidates.size(); j++){
                 int base = heights[candidates[j]];
                 int distanceRight = candidates.back() - candidates[j];
-                int distanceLeft = candidates[j] - (j == 0 ? 0 : candidates[j-1]);
-                distanceLeft--;
+                int distanceLeft = candidates[j] - (j == 0 ? 0 : candidates[j-1] + 1);
                 int area = base + (distanceRight * base) + (distanceLeft * base);
                 answer = max(answer, area);
 
