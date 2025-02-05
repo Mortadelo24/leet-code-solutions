@@ -17,7 +17,7 @@ public:
                 results.pop_back();
             }
                     // int distanceLeft = candidates[j] - (j == 0 ? 0 : candidates[j-1] + 1); 
-            results.push_back(heights[i] * ( i  -  (results.empty() ? 0 : candidates.back() + 1 ));
+            results.push_back(0);
             candidates.push_back(i);
 
             // end
