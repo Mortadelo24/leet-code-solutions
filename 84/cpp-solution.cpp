@@ -8,6 +8,7 @@ public:
     }
     int largestRectangleArea(vector<int>& heights) {
         vector<int> candidates;
+        int answer = 0;
         for (int i = 0; i < heights.size(); i++){
             // insert element in stack
             while(!candidates.empty() && heights[candidates.back()] > heights[i]) candidates.pop_back();
@@ -19,11 +20,13 @@ public:
                 int base = heights[candidates[j]];
                 // use start 0 as start index for the first element
                 int distance = candidates.back() - (j == 0 ? 0 : candidates[j]);
-                cout << base + (distance * base) << endl;
+                int area = base + (distance * base);
+                answer = max(answer, area);
+
             }
             
 
         }
-        return 0;
+        return answer;
     }
 };
