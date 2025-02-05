@@ -8,11 +8,16 @@ public:
     }
     int largestRectangleArea(vector<int>& heights) {
         vector<int> candidates;
+        vector<int> results;
         int answer = 0;
         for (int i = 0; i < heights.size(); i++){
             // insert element in stack
-            while(!candidates.empty() && heights[candidates.back()] >= heights[i]) candidates.pop_back();
+            while(!candidates.empty() && heights[candidates.back()] >= heights[i]) {
+                candidates.pop_back();
+                results.pop_back();
+            }
             candidates.push_back(i);
+            results.pop_back(0);
             // end
             printStack(candidates, heights);
 
