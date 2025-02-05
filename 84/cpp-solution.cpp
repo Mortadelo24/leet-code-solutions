@@ -25,7 +25,9 @@ public:
             //  there is a problem with the optimization of this part of the code but i will not touch it
             for (int j = 0; j < candidates.size(); j++){
                 results[j] += heights[candidates[j]];
+                int previousAnswer = answer;
                 answer = max(answer, results[j]);
+                if (previousAnswer != answer) cout << "New answer: " << answer << endl;
             }
         }
         return answer;
