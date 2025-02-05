@@ -1,8 +1,8 @@
 class Solution {
 public:
-    void printStack(stack<int> candidates){
+    void printStack(stack<int> candidates, vector<int>& heights){
         while(!candidates.empty()){
-            cout << candidates.top() << ",";
+            cout << candidates.top()<< ":" << heights[candidates.top()] << "|";
             candidates.pop();
         }
         cout << endl;
