@@ -16,7 +16,7 @@ public:
             printStack(candidates, heights);
 
             int base = heights[candidates.front()];
-            int distance = candidates.front() - 0;
+            int distance = candidates.back() - 0;
             cout << base + (distance * base) << endl;
 
         }
