@@ -23,11 +23,9 @@ public:
 
             for (int j = 0; j < candidates.size(); j++){
                 int base = heights[candidates[j]];
-                int distanceRight = candidates.back() - candidates[j];
-                int distanceLeft = candidates[j] - (j == 0 ? 0 : candidates[j-1] + 1); 
-                int area = base + (distanceRight * base) + (distanceLeft * base);
-                cout << area << endl;
-                answer = max(answer, area);
+                results[j] += base;
+                cout << results[j] << endl;
+                answer = max(answer, 0);
 
             }
             
