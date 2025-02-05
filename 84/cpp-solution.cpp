@@ -16,7 +16,9 @@ public:
                 candidates.pop_back();
                 results.pop_back();
             }
-                    // int distanceLeft = candidates[j] - (j == 0 ? 0 : candidates[j-1] + 1); 
+            // int distanceLeft = candidates[j] - (j == 0 ? 0 : candidates[j-1] + 1); 
+            int distanceLeft = i  -  (results.empty() ? 0 : candidates.back() + 1);
+            cout << heights[i] * ( distanceLeft ) << endl;
             results.push_back(0);
             candidates.push_back(i);
 
