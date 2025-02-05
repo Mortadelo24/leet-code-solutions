@@ -11,7 +11,7 @@ public:
         int answer = 0;
         for (int i = 0; i < heights.size(); i++){
             // insert element in stack
-            while(!candidates.empty() && heights[candidates.back()] > heights[i]) candidates.pop_back();
+            while(!candidates.empty() && heights[candidates.back()] >= heights[i]) candidates.pop_back();
             candidates.push_back(i);
             // end
             printStack(candidates, heights);
