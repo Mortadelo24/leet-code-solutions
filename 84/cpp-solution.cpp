@@ -1,18 +1,17 @@
 class Solution {
 public:
-    void printStack(stack<int> candidates, vector<int>& heights){
-        while(!candidates.empty()){
-            cout << candidates.top()<< ":" << heights[candidates.top()] << "|";
-            candidates.pop();
+    void printStack(vector<int>& candidates, vector<int>& heights){
+        for (int candidate : candidates){
+            cout << candidate << ":" << heights[candidate] << "|";
         }
         cout << endl;
     }
     int largestRectangleArea(vector<int>& heights) {
-        stack<int> candidates;
+        vector<int> candidates;
         for (int i = 0; i < heights.size(); i++){
             // insert element in stack
-            while(!candidates.empty() && heights[candidates.top()] > heights[i]) candidates.pop();
-            candidates.push(i);
+            while(!candidates.empty() && heights[candidates.back()] > heights[i]) candidates.pop_back();
+            candidates.push_back(i);
             // end
 
             printStack(candidates, heights);
