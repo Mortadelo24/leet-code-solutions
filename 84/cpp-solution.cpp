@@ -15,7 +15,7 @@ public:
             candidates.push(i);
             // end
 
-            printStack(candidates);
+            printStack(candidates, heights);
 
         }
         return 0;
