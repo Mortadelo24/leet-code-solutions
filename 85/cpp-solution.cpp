@@ -1,43 +1,43 @@
 class Solution {
 public:
-    void printState(vector<vector<pair<int,int>>>& matrix){
-        for (vector<pair<int,int>> row : matrix) {
-            for (pair<int,int> p : row){
-                cout << p.first << " ";
-            }
+    void printState(vector<int>& matrix){
+            for (int p : matrix){
+                cout << p << " ";
+            }        
             cout << endl;
-        }
-        cout << string(matrix.front().size() * 2, '-') << endl;
-        for (vector<pair<int,int>> row : matrix) {
-            for (pair<int,int> p : row){
-                cout << p.second << " ";
-            }
-            cout << endl;
+    }
+    void printCandidates(vector<pair<int, int>>& candidates){
+        for (auto p : candidates){
+            cout << p.first << ":" << p.second << " ";
         }
         cout << endl;
     }
+   
     int maximalRectangle(vector<vector<char>>& matrix) {
         int rows = matrix.size();
         int cols = matrix.front().size();
-        vector<vector<pair<int, int>>> dp(rows, vector(cols, make_pair(0, 0)));
+        vector<pair<int,int>> candidates;
+        int maxRectangle = 0;
+        vector<int> dp(cols, 0);
+
         for (int i = 0; i < rows; i++){
+            candidates.clear();
             for (int j = 0; j < cols; j++){
-                dp[i][j].first = matrix[i][j] == '1' ? 1 : 0;
-                if (dp[i][j].first == 0) continue;
-                if (j != 0) dp[i][j].first += dp[i][j-1].first;
+                dp[j] = matrix[i][j] == '1' ? dp[j] + 1 : 0; 
+
+                while(!candidates.empty() && dp[candidates.back().first] >= dp[j]) candidates.pop_back();
+                int distanceLeft = j  -  (candidates.empty() ? 0 : candidates.back().first + 1);
+                candidates.push_back(make_pair(j, dp[j] * distanceLeft));
                 
-                if (dp[i][j].first == 0) continue;
-                dp[i][j].second = 1;
-                if (i == 0) continue;
-                if (dp[i-1][j].first != 0 ){
-                    dp[i][j].second += dp[i-1][j].second;
+                for (int x = 0; x < candidates.size(); x++){
+                    candidates[x].second += dp[candidates[x].first];
+                    maxRectangle = max(candidates[x].second, maxRectangle);
                 }
-            
-            }
+                
+            }            
         }
-        printState(dp);
 
 
-        return 0;
+        return maxRectangle;
     }
 };
