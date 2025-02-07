@@ -6,7 +6,7 @@ public:
 
         nums1.erase(nums1.end() - n,nums1.end());
 
-        for (int i = 0; i < m + n; i++){
+        for (int i = 0; i < m + n && index < n; i++){
             if (nums1[i] <= nums2[index]) continue;
             nums1.insert(nums1.begin()+i, nums2[index++]);
             i--;
