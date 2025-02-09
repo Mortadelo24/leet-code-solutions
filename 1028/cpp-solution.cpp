@@ -14,7 +14,7 @@ public:
             vector<int>& rangeB = secondList[pointerB];
             if (collides(rangeA, rangeB)){
                 int subPointerB = pointerB;
-                while(subPointerB < secondList.size() && collides(rangeA,  secondList[subPointerB]) ){
+                while(subPointerB < secondList.size() && (collides(rangeA,  secondList[subPointerB]) || collides( secondList[subPointerB], rangeA) )){
                     ranges.push_back({max(rangeA[0], secondList[subPointerB][0]), min(rangeA[1], secondList[subPointerB][1])});
                     subPointerB++;
                 }
