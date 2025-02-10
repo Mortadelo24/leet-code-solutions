@@ -5,19 +5,30 @@ public:
     }
     int takeCharacters(string s, int k) {
         unordered_map<char, int> characters;
-        characters['a'] = -2;
-        characters['b'] = -2;
-        characters['c'] = -2;
+        characters['a'] = -k;
+        characters['b'] = -k;
+        characters['c'] = -k;
 
-        int i = 0;
-        while (i < s.size() && !includesAllChars(characters)){
-            characters[s[i++]]++;
+        int right = s.size() - 1;
+        int left = 0;
+        while (right >= 0 && !includesAllChars(characters)){
+            characters[s[right--]]++;
         }
-        cout << characters['a'] << endl;
-        cout << characters['a'] << endl;
+        if (!includesAllChars(characters)) return -1;
+        
+        while(right < s.size()){
+            right++;
+            characters[s[right]]--;
+            if (!includesAllChars(characters)){
+                characters[s[left]]++;
+                left++;
+            }else{
+                cout << left << "|" << right << endl;
+                cout << string(s.begin(), s.begin() + left) << " + " << string(s.begin()+ right + 1, s.end())<< endl;
 
-        cout << includesAllChars(characters) << endl;
+            }
+        }
 
-        return 0;
+        return s.size() - (right + 1 - left);
     }
 };
