@@ -22,10 +22,6 @@ public:
             if (!includesAllChars(characters)){
                 characters[s[left]]++;
                 left++;
-            }else{
-                cout << left << "|" << right << endl;
-                cout << string(s.begin(), s.begin() + left) << " + " << string(s.begin()+ right + 1, s.end())<< endl;
-
             }
         }
 
