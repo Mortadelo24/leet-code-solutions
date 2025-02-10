@@ -26,7 +26,7 @@ public:
                 left++;
             }
         }
-
-        return s.size() - (right + 1 - left);
+        
+        return s.size() - (right - left);
     }
 };
