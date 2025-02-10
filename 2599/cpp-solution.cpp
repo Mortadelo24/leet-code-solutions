@@ -4,6 +4,7 @@ public:
         return characters['a'] >= 0 && characters['b'] >= 0  && characters['c'] >= 0; 
     }
     int takeCharacters(string s, int k) {
+        if (k <= 0) return 0;
         unordered_map<char, int> characters;
         characters['a'] = -k;
         characters['b'] = -k;
@@ -14,8 +15,9 @@ public:
         while (right >= 0 && !includesAllChars(characters)){
             characters[s[right--]]++;
         }
-        if (!includesAllChars(characters)) return -1;
-        
+
+        if (!includesAllChars(characters)) return -1; 
+
         while(right < s.size()){
             right++;
             characters[s[right]]--;
