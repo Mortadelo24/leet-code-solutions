@@ -6,6 +6,7 @@ public:
     int takeCharacters(string s, int k) {
         if (k <= 0) return 0;
         unordered_map<char, int> characters;
+        int maxWindowLenght = 0;
         characters['a'] = -k;
         characters['b'] = -k;
         characters['c'] = -k;
@@ -19,14 +20,15 @@ public:
         if (!includesAllChars(characters)) return -1; 
 
         while(right < s.size()){
+            maxWindowLenght = right - left + 1;
             right++;
             characters[s[right]]--;
             if (!includesAllChars(characters)){
                 characters[s[left]]++;
                 left++;
-            }
+            } 
         }
-        
-        return s.size() - (right - left);
+
+        return s.size() - maxWindowLenght;
     }
 };
