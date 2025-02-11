@@ -1,6 +1,9 @@
 class Solution {
 public:
     bool isOneBitCharacter(vector<int>& bits) {
-        return bits.size() % 2 != 0;
+        for (int i : bits){
+            if (i == 1) return bits.size() % 2 != 0;
+        }
+        return true;
     }
 };
